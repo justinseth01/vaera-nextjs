@@ -89,6 +89,7 @@ export default function BeforeAfterSlider() {
               alt="Vaera device precision"
               width={1920}
               height={1280}
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1000px"
               className="w-full h-auto"
               draggable="false"
               priority
@@ -103,6 +104,7 @@ export default function BeforeAfterSlider() {
                 src="https://cdn.shopify.com/s/files/1/0710/2313/2772/files/DSC_5000_24c75828-8774-4985-9cba-b86365dbda27.jpg?v=1754449374"
                 alt="Competitor device damage"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1000px"
                 className="object-cover"
                 draggable="false"
               />

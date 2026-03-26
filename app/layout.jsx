@@ -43,6 +43,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${italiana.variable} ${poppins.variable} ${robotoMono.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://cdn.shopify.com" />
+        <link rel="dns-prefetch" href="https://cdn.shopify.com" />
+      </head>
       <body>
         <NoiseOverlay />
         {children}
