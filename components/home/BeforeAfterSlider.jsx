@@ -63,7 +63,7 @@ export default function BeforeAfterSlider() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="results" className="section-padding bg-vaera-gray">
+    <section ref={sectionRef} id="results" className="section-padding pb-8 md:pb-12 bg-vaera-gray">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-italiana text-4xl md:text-5xl lg:text-6xl text-vaera-navy mb-6">
@@ -76,7 +76,7 @@ export default function BeforeAfterSlider() {
 
         <div
           ref={containerRef}
-          className="relative w-full mx-auto rounded-4xl overflow-hidden cursor-ew-resize select-none shadow-2xl"
+          className="relative w-full max-w-4xl mx-auto rounded-4xl overflow-hidden cursor-ew-resize select-none shadow-2xl"
           onMouseDown={handleMouseDown}
           onTouchMove={handleTouchMove}
           onTouchStart={() => setIsDragging(true)}

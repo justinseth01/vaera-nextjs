@@ -4,67 +4,125 @@ import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 
 export default function Hero() {
+  const scrollToWaitlist = (e) => {
+    e.preventDefault()
+    const waitlistSection = document.getElementById('waitlist')
+    if (waitlistSection) {
+      waitlistSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
-    <section className="relative md:min-h-screen overflow-hidden bg-gradient-to-br from-white via-vaera-gray to-vaera-ice/20">
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-vaera-ice/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-vaera-ice/20 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative flex items-center overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-white to-[#F5F0EB]" />
 
-      {/* Main container */}
-      <div className="relative md:min-h-screen flex items-center justify-center pt-20 md:pt-0">
-        <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row md:items-center">
+      {/* Subtle grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.015]"
+        style={{
+          backgroundImage: `linear-gradient(to right, #1F2A37 1px, transparent 1px), linear-gradient(to bottom, #1F2A37 1px, transparent 1px)`,
+          backgroundSize: '80px 80px'
+        }}
+      />
 
-          {/* Content - Text side */}
-          <div className="order-2 md:order-1 md:w-1/2 px-6 md:pl-12 lg:pl-16 md:pr-8 pb-12 md:pb-0">
-            {/* Line */}
-            <div className="w-12 md:w-16 h-px bg-vaera-navy/30 mb-4 md:mb-6" />
+      {/* Floating orbs */}
+      <div className="absolute top-32 left-[10%] w-96 h-96 bg-vaera-ice/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 right-[5%] w-[500px] h-[500px] bg-[#D4A574]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-[40%] w-72 h-72 bg-[#E8DDD4]/25 rounded-full blur-3xl pointer-events-none" />
 
-            {/* Tagline */}
-            <p className="font-mono text-xs tracking-[0.2em] uppercase text-vaera-navy/50 mb-3 md:mb-4">
-              Precision Skincare Technology
-            </p>
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-40">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
 
-            <h1 className="font-italiana text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-vaera-navy leading-[0.95] mb-6 md:mb-8">
-              Professional
+          {/* Left column - Content */}
+          <div className="order-2 lg:order-1">
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-px w-12 bg-vaera-navy/30" />
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-vaera-navy/50">
+                Professional-Grade Microneedling
+              </span>
+            </div>
+
+            {/* Headline */}
+            <h1 className="font-italiana text-5xl md:text-6xl lg:text-7xl text-vaera-navy leading-[0.95] mb-8">
+              Clinical Precision.
               <br />
-              Results.
-              <br />
-              <span className="text-vaera-navy">At Home.</span>
+              <span className="relative inline-block">
+                At Home.
+                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
+                  <path d="M0 4C50 4 50 7 100 7C150 7 150 1 200 1" stroke="#D4A574" strokeWidth="3" strokeLinecap="round"/>
+                </svg>
+              </span>
             </h1>
 
-            <p className="font-poppins font-light text-base md:text-lg lg:text-xl text-vaera-navy/60 max-w-md mb-8 md:mb-10 leading-relaxed">
-              The world&apos;s most advanced at-home microneedling device. Backed by dermatological science, designed for real results.
+            {/* Subhead */}
+            <p className="font-poppins text-lg md:text-xl text-vaera-navy/60 leading-relaxed mb-10 max-w-lg">
+              The microneedling device built for results, not hype. 3x more consistent penetration depth than leading at-home devices.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-              <a
-                href="#waitlist"
-                className="inline-flex items-center gap-3 bg-vaera-navy text-white px-8 py-4 rounded-full font-poppins font-medium text-sm tracking-wide transition-all duration-300 hover:bg-vaera-light-navy hover:shadow-lg hover:shadow-vaera-navy/20 group"
-                style={{ transform: 'scale(1)', transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease' }}
-                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.03)'}
-                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+            {/* CTA */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-16">
+              <button
+                onClick={scrollToWaitlist}
+                className="group inline-flex items-center gap-3 btn-primary"
               >
                 Join the Waitlist
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
-              <span className="text-vaera-navy/40 text-sm font-poppins">$249 at launch</span>
+              </button>
+              <span className="font-poppins text-sm text-vaera-navy/40">
+                Launching at $249
+              </span>
+            </div>
+
+            {/* Stats */}
+            <div className="flex flex-wrap gap-8 lg:gap-12">
+              <div>
+                <div className="font-mono text-2xl md:text-3xl text-vaera-navy font-medium">
+                  ±0.05mm
+                </div>
+                <div className="font-poppins text-sm text-vaera-navy/50 mt-1">
+                  Penetration variance
+                </div>
+              </div>
+              <div>
+                <div className="font-mono text-2xl md:text-3xl text-vaera-navy font-medium">
+                  40%
+                </div>
+                <div className="font-poppins text-sm text-vaera-navy/50 mt-1">
+                  Less skin trauma
+                </div>
+              </div>
+              <div>
+                <div className="font-mono text-2xl md:text-3xl text-vaera-navy font-medium">
+                  200+
+                </div>
+                <div className="font-poppins text-sm text-vaera-navy/50 mt-1">
+                  Customer interviews
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Image side */}
-          <div className="order-1 md:order-2 md:w-1/2 flex items-center justify-center px-6 md:px-8 lg:px-12 pt-6 pb-16 md:py-0">
-            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg aspect-square overflow-hidden shadow-2xl shadow-vaera-navy/20">
-              {/* Soft glow behind device */}
-              <div className="absolute inset-0 bg-gradient-radial from-vaera-ice/50 via-transparent to-transparent scale-110 blur-2xl" />
-              <Image
-                src="https://cdn.shopify.com/s/files/1/0710/2313/2772/files/AI2_20-_20Aesthetic_2025-08-31_02_24_37_557137_png.png?v=1756607115"
-                alt="Vaera microneedling device"
-                fill
-                className="object-cover scale-150 drop-shadow-2xl"
-                style={{ transformOrigin: '50% 65%' }}
-                priority
-              />
+          {/* Right column - Product Image */}
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+            <div className="relative">
+              {/* Glow effect behind image */}
+              <div className="absolute -inset-8 bg-gradient-to-br from-[#D4A574]/20 via-[#E8DDD4]/15 to-vaera-ice/20 rounded-[3rem] blur-2xl" />
+
+              {/* Image container - square aspect ratio */}
+              <div className="relative w-[360px] h-[360px] md:w-[420px] md:h-[420px] lg:w-[480px] lg:h-[480px] rounded-[2rem] overflow-hidden bg-white shadow-2xl shadow-vaera-navy/10">
+                <Image
+                  src="https://cdn.shopify.com/s/files/1/0710/2313/2772/files/AI2_20-_20Aesthetic_2025-08-31_02_24_37_557137_png.png?v=1756607115"
+                  alt="Vaera microneedling device"
+                  fill
+                  className="object-cover scale-150 -translate-y-[8%]"
+                  priority
+                />
+
+                {/* Subtle overlay for depth */}
+                <div className="absolute inset-0 bg-gradient-to-t from-vaera-navy/5 to-transparent" />
+              </div>
             </div>
           </div>
         </div>
