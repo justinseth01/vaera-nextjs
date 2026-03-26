@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Check, X } from 'lucide-react'
+import { Check, X, ChevronRight } from 'lucide-react'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -113,12 +113,9 @@ export default function MotorComparison() {
 
         {/* Comparison Cards */}
         <div className="motor-cards-container relative">
-          {/* Mobile scroll hint */}
-          <div className="lg:hidden absolute right-0 top-1/2 -translate-y-1/2 w-12 h-full bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
-
-          <div className="flex lg:grid lg:grid-cols-[1fr_auto_1fr] gap-4 lg:gap-6 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 snap-x snap-mandatory scrollbar-hide items-center">
+          <div className="flex lg:grid lg:grid-cols-[1fr_auto_1fr] gap-4 lg:gap-6 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 snap-x snap-mandatory scrollbar-hide items-center pl-4 lg:pl-0 -mx-4 lg:mx-0 px-4 lg:px-0">
             {/* Vaera Column */}
-            <div className="motor-card flex-shrink-0 w-[85vw] max-w-[340px] lg:w-auto lg:max-w-none snap-start">
+            <div className="motor-card flex-shrink-0 w-[75vw] max-w-[340px] lg:w-auto lg:max-w-none snap-start">
               <div className="rounded-[2rem] border border-vaera-navy/10 bg-white overflow-hidden h-full">
                 {/* Split image - Vaera device and diagram */}
                 <div className="flex border-b border-vaera-navy/5 aspect-[3/2]">
@@ -175,7 +172,7 @@ export default function MotorComparison() {
             </div>
 
             {/* Generic Column */}
-            <div className="motor-card flex-shrink-0 w-[85vw] max-w-[340px] lg:w-auto lg:max-w-none snap-start">
+            <div className="motor-card flex-shrink-0 w-[75vw] max-w-[340px] lg:w-auto lg:max-w-none snap-start">
               <div className="rounded-[2rem] border border-vaera-navy/10 bg-white overflow-hidden h-full">
                 {/* Split image - Generic pen and diagram */}
                 <div className="flex border-b border-vaera-navy/5 aspect-[3/2]">
@@ -223,6 +220,12 @@ export default function MotorComparison() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Mobile swipe indicator */}
+          <div className="lg:hidden flex items-center justify-center gap-2 mt-6 text-vaera-navy/40">
+            <span className="font-poppins text-sm">Swipe to compare</span>
+            <ChevronRight className="w-4 h-4 animate-pulse" />
           </div>
         </div>
 
