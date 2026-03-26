@@ -103,7 +103,7 @@ export default function Hero() {
               src="https://cdn.shopify.com/s/files/1/0710/2313/2772/files/AI2_20-_20Aesthetic_2025-08-31_02_24_37_557137_png.png?v=1756607115"
               alt="Vaera microneedling device"
               fill
-              className="object-cover scale-[1.9] md:scale-150 drop-shadow-2xl"
+              className="object-cover scale-150 drop-shadow-2xl"
               style={{ transformOrigin: '50% 65%' }}
               priority
             />

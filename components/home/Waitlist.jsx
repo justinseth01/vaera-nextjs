@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Mail, ArrowRight, Check, Star, Sparkles } from 'lucide-react'
+import { Mail, ArrowRight, Check } from 'lucide-react'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -109,24 +109,6 @@ export default function Waitlist() {
               ))}
             </div>
 
-            {/* Testimonial */}
-            <div className="waitlist-v2-reveal">
-              <div className="relative bg-gradient-to-br from-white to-[#FAF8F5] rounded-3xl p-6 shadow-sm border border-[#E8DDD4]/50">
-                <div className="absolute -top-3 -left-2 text-4xl text-[#D4A574]/40">"</div>
-                <p className="font-poppins text-vaera-navy/80 text-sm leading-relaxed mb-4 pl-4">
-                  I&apos;ve spent thousands on clinic treatments. If Vaera delivers even half of what they&apos;re promising, it&apos;s a game-changer for at-home skincare.
-                </p>
-                <div className="flex items-center gap-3 pl-4">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#E8DDD4] to-[#D4A574]/30 flex items-center justify-center">
-                    <span className="font-poppins font-medium text-vaera-navy text-sm">SK</span>
-                  </div>
-                  <div>
-                    <p className="font-poppins font-medium text-vaera-navy text-sm">Sarah K.</p>
-                    <p className="font-mono text-xs text-vaera-navy/40">Waitlist member</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Right column - Form card */}
@@ -215,18 +197,6 @@ export default function Waitlist() {
                     </div>
                   )}
 
-                  {/* Bottom badges */}
-                  <div className="flex items-center justify-center gap-4 mt-8 pt-6 border-t border-white/10">
-                    <div className="flex items-center gap-1.5 text-white/40">
-                      <Sparkles className="w-4 h-4" />
-                      <span className="font-mono text-xs">Launch Q2 2026</span>
-                    </div>
-                    <div className="w-1 h-1 bg-white/20 rounded-full" />
-                    <div className="flex items-center gap-1.5 text-white/40">
-                      <Star className="w-4 h-4" />
-                      <span className="font-mono text-xs">$249 MSRP</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

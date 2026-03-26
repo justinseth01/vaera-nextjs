@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import ShopNavbar from '@/components/layout/ShopNavbar'
+import Navbar from '@/components/layout/Navbar'
 import ProductGallery from '@/components/shop/ProductGallery'
 import ProductInfo from '@/components/shop/ProductInfo'
 import Benefits from '@/components/shop/Benefits'
@@ -15,7 +15,7 @@ export default function ProductsPage() {
 
   return (
     <>
-      <ShopNavbar />
+      <Navbar />
 
       <main>
         {/* Hero Product Section with Split Scroll */}

@@ -180,7 +180,7 @@ export default function Testimonials() {
             Results You&apos;ll See With Your Own Eyes
           </h2>
           <p className="font-poppins font-light text-vaera-navy/70 max-w-2xl mx-auto">
-            Join hundreds of customers who&apos;ve transformed their skin with Vaera&apos;s precision microneedling technology.
+            Join the waitlist and get the same results our beta testers are raving about.
           </p>
         </div>
 

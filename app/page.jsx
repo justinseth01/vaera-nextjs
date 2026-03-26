@@ -1,10 +1,9 @@
 import Navbar from '@/components/layout/Navbar'
 import Hero from '@/components/home/Hero'
-import Features from '@/components/home/Features'
+// import Features from '@/components/home/Features'
 import TreatmentComparison from '@/components/home/TreatmentComparison'
 import MotorComparison from '@/components/home/MotorComparison'
 import SkinSense from '@/components/home/SkinSense'
-import Philosophy from '@/components/home/Philosophy'
 import Protocol from '@/components/home/Protocol'
 import Waitlist from '@/components/home/Waitlist'
 import BeforeAfterSlider from '@/components/home/BeforeAfterSlider'
@@ -23,10 +22,9 @@ export default function HomePage() {
         <MotorComparison />
         <TreatmentComparison />
         <SkinSense />
-        <Features />
+        {/* <Features /> */}
         <Protocol />
         <WhyUs />
-        <Philosophy />
         <Waitlist />
       </main>
       <Footer />

@@ -82,26 +82,35 @@ export default function AboutPage() {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section ref={heroRef} className="relative min-h-[70vh] pt-32 pb-20 px-6 md:px-12 lg:px-24 overflow-hidden">
-          {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white via-vaera-gray to-vaera-ice/20" />
-          <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-vaera-ice/20 rounded-full blur-3xl" />
+        <section ref={heroRef} className="relative pt-32 pb-16 px-6 md:px-12 lg:px-24 overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="https://images.unsplash.com/photo-1592659762303-90081d34b277?q=80&w=1373&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+              fill
+              className="object-cover"
+              priority
+            />
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-black/75" />
+          </div>
 
           <div className="relative max-w-6xl mx-auto">
             <div className="max-w-3xl">
-              <span className="about-hero-text text-xs font-mono text-vaera-navy/50 uppercase tracking-widest mb-6 block">
+              <span className="about-hero-text text-xs font-mono text-white/50 uppercase tracking-widest mb-6 block">
                 Our Story
               </span>
-              <h1 className="about-hero-text font-italiana text-5xl md:text-6xl lg:text-7xl text-vaera-navy mb-8 leading-[0.95]">
+              <h1 className="about-hero-text font-italiana text-5xl md:text-6xl lg:text-7xl text-white mb-8 leading-[0.95]">
                 Built from
                 <br />
-                <span className="text-vaera-light-navy/70">Frustration.</span>
+                <span className="text-white/70">Frustration.</span>
                 <br />
                 Driven by
                 <br />
-                <span className="text-vaera-light-navy/70">Science.</span>
+                <span className="text-white/70">Science.</span>
               </h1>
-              <p className="about-hero-text font-poppins font-light text-xl text-vaera-navy/60 max-w-xl leading-relaxed">
+              <p className="about-hero-text font-poppins font-light text-xl text-white/70 max-w-xl leading-relaxed">
                 Why should professional-grade skincare results be locked behind expensive clinic visits?
               </p>
             </div>
@@ -116,7 +125,7 @@ export default function AboutPage() {
               <div className="story-content relative">
                 <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-vaera-gray">
                   <Image
-                    src="https://images.unsplash.com/photo-1573461160327-b450ce3d8e7f?q=80&w=765&auto=format&fit=crop"
+                    src="https://cdn.shopify.com/s/files/1/0710/2313/2772/files/MG_0714-33.jpg?v=1774555832"
                     alt="Justin Seth, Founder of Vaera"
                     fill
                     className="object-cover"
@@ -137,8 +146,8 @@ export default function AboutPage() {
                 </h2>
                 <div className="story-content w-16 h-px bg-vaera-navy/20 mb-8" />
 
-                <div className="space-y-6 font-poppins font-light text-vaera-navy/70 leading-relaxed">
-                  <p className="story-content text-lg">
+                <div className="space-y-6 font-poppins font-light text-vaera-navy/70 leading-relaxed text-lg">
+                  <p className="story-content">
                     Vaera was founded by Justin Seth, a mechanical engineer who discovered microneedling
                     as a promising hair loss treatment — but found clinical treatments too expensive and
                     at-home alternatives painful and damaging.
@@ -204,12 +213,15 @@ export default function AboutPage() {
               {values.map((value, index) => (
                 <div
                   key={index}
-                  className="value-card bg-white rounded-3xl p-8 border border-vaera-navy/5 hover:shadow-xl hover:shadow-vaera-navy/5 transition-all duration-500"
+                  className="value-card group bg-white rounded-3xl p-8 border border-vaera-navy/5
+                             hover:shadow-2xl hover:shadow-vaera-navy/10 hover:-translate-y-2 hover:scale-[1.02]
+                             transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] cursor-pointer"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-vaera-ice/20 flex items-center justify-center mb-6">
-                    <value.icon className="w-7 h-7 text-vaera-navy" />
+                  <div className="w-14 h-14 rounded-2xl bg-vaera-ice/20 flex items-center justify-center mb-6
+                                  group-hover:bg-vaera-ice/40 group-hover:scale-110 transition-all duration-500">
+                    <value.icon className="w-7 h-7 text-vaera-navy group-hover:text-vaera-navy transition-colors duration-300" />
                   </div>
-                  <h3 className="font-italiana text-2xl text-vaera-navy mb-4">
+                  <h3 className="font-italiana text-2xl text-vaera-navy mb-4 group-hover:text-vaera-light-navy transition-colors duration-300">
                     {value.title}
                   </h3>
                   <p className="font-poppins font-light text-vaera-navy/70 leading-relaxed">

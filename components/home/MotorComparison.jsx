@@ -117,63 +117,6 @@ export default function MotorComparison() {
           <div className="lg:hidden absolute right-0 top-1/2 -translate-y-1/2 w-12 h-full bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
 
           <div className="flex lg:grid lg:grid-cols-[1fr_auto_1fr] gap-4 lg:gap-6 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 snap-x snap-mandatory scrollbar-hide items-center">
-            {/* Generic Column */}
-            <div className="motor-card flex-shrink-0 w-[85vw] max-w-[340px] lg:w-auto lg:max-w-none snap-start">
-              <div className="rounded-[2rem] border border-vaera-navy/10 bg-white overflow-hidden h-full">
-                {/* Split image - Generic pen and diagram */}
-                <div className="flex border-b border-vaera-navy/5 aspect-[3/2]">
-                  <div className="relative w-1/2 bg-vaera-gray/30">
-                    <Image
-                      src="https://cdn.shopify.com/s/files/1/0710/2313/2772/files/SORA-2000x2000-img2.webp?v=1774549832"
-                      alt="Generic at-home pen device"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="relative w-1/2 bg-white">
-                    <Image
-                      src="https://cdn.shopify.com/s/files/1/0710/2313/2772/files/dr._pen_diagram_2.jpg?v=1774549753"
-                      alt="Generic pen needle diagram"
-                      fill
-                      className="object-cover"
-                    />
-                    {/* Red label for tearing */}
-                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-red-500 rounded-full shadow-lg">
-                      <span className="font-poppins text-xs font-medium text-white whitespace-nowrap">Skin Tearing</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Title */}
-                <div className="p-6 pb-4 border-b border-vaera-navy/10">
-                  <h3 className="font-poppins font-medium text-xl md:text-2xl text-vaera-navy">
-                    Generic At-Home Pen
-                  </h3>
-                </div>
-
-                {/* Points */}
-                <div className="p-6 space-y-4">
-                  {genericPoints.map((point, i) => (
-                    <div key={i} className="motor-point flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-vaera-navy/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <X className="w-3 h-3 text-vaera-navy/30" />
-                      </div>
-                      <span className="font-poppins text-sm text-vaera-navy leading-relaxed">
-                        {point}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* VS Badge - Between cards */}
-            <div className="flex-shrink-0 flex items-center justify-center self-center">
-              <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-vaera-gray border-2 border-vaera-navy/10 flex items-center justify-center">
-                <span className="font-poppins font-semibold text-vaera-navy text-xs lg:text-sm">VS</span>
-              </div>
-            </div>
-
             {/* Vaera Column */}
             <div className="motor-card flex-shrink-0 w-[85vw] max-w-[340px] lg:w-auto lg:max-w-none snap-start">
               <div className="rounded-[2rem] border border-vaera-navy/10 bg-white overflow-hidden h-full">
@@ -214,6 +157,63 @@ export default function MotorComparison() {
                     <div key={i} className="motor-point flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-[#7A9FB5] flex items-center justify-center flex-shrink-0 mt-0.5">
                         <Check className="w-3 h-3 text-white" />
+                      </div>
+                      <span className="font-poppins text-sm text-vaera-navy leading-relaxed">
+                        {point}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* VS Badge - Between cards */}
+            <div className="flex-shrink-0 flex items-center justify-center self-center">
+              <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-vaera-gray border-2 border-vaera-navy/10 flex items-center justify-center">
+                <span className="font-poppins font-semibold text-vaera-navy text-xs lg:text-sm">VS</span>
+              </div>
+            </div>
+
+            {/* Generic Column */}
+            <div className="motor-card flex-shrink-0 w-[85vw] max-w-[340px] lg:w-auto lg:max-w-none snap-start">
+              <div className="rounded-[2rem] border border-vaera-navy/10 bg-white overflow-hidden h-full">
+                {/* Split image - Generic pen and diagram */}
+                <div className="flex border-b border-vaera-navy/5 aspect-[3/2]">
+                  <div className="relative w-1/2 bg-vaera-gray/30">
+                    <Image
+                      src="https://cdn.shopify.com/s/files/1/0710/2313/2772/files/SORA-2000x2000-img2.webp?v=1774549832"
+                      alt="Generic at-home pen device"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="relative w-1/2 bg-white">
+                    <Image
+                      src="https://cdn.shopify.com/s/files/1/0710/2313/2772/files/dr._pen_diagram_2.jpg?v=1774549753"
+                      alt="Generic pen needle diagram"
+                      fill
+                      className="object-cover"
+                    />
+                    {/* Red label for tearing */}
+                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-red-500 rounded-full shadow-lg">
+                      <span className="font-poppins text-xs font-medium text-white whitespace-nowrap">Skin Tearing</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Title */}
+                <div className="p-6 pb-4 border-b border-vaera-navy/10">
+                  <h3 className="font-poppins font-medium text-xl md:text-2xl text-vaera-navy">
+                    Generic At-Home Pen
+                  </h3>
+                </div>
+
+                {/* Points */}
+                <div className="p-6 space-y-4">
+                  {genericPoints.map((point, i) => (
+                    <div key={i} className="motor-point flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-vaera-navy/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <X className="w-3 h-3 text-vaera-navy/30" />
                       </div>
                       <span className="font-poppins text-sm text-vaera-navy leading-relaxed">
                         {point}
