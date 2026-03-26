@@ -7,7 +7,7 @@ import { Mail, ArrowRight, Check, Star, Sparkles } from 'lucide-react'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function WaitlistRedesign() {
+export default function Waitlist() {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [isFocused, setIsFocused] = useState(false)
@@ -43,7 +43,7 @@ export default function WaitlistRedesign() {
   }
 
   return (
-    <section ref={sectionRef} className="relative py-32 md:py-40 overflow-hidden">
+    <section ref={sectionRef} id="waitlist" className="relative py-32 md:py-40 overflow-hidden">
       {/* Background layers */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-white to-[#F5F0EB]" />
 
