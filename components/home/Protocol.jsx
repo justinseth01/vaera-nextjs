@@ -22,7 +22,7 @@ export default function Protocol() {
     },
     {
       number: '02',
-      title: 'Vertical Impact Technology',
+      title: 'Vertical Impact = Clean Punctures',
       description: 'Patentable skin-safe technology creates precise channels without lateral tearing.',
       visual: 'impact',
     },
