@@ -78,7 +78,7 @@ export default function Hero() {
             <br />
             Results.
             <br />
-            <span className="text-vaera-light-navy/70">At Home.</span>
+            <span className="text-vaera-navy">At Home.</span>
           </h1>
 
           <p ref={subRef} className="font-poppins font-light text-lg lg:text-xl text-vaera-navy/60 max-w-md mb-10 leading-relaxed">
@@ -102,14 +102,15 @@ export default function Hero() {
 
         {/* Right image */}
         <div className="w-1/2 h-[100dvh] flex items-center justify-center pr-8 lg:pr-16">
-          <div ref={imageRef} className="relative w-full max-w-2xl aspect-square">
+          <div ref={imageRef} className="relative w-full max-w-2xl aspect-square overflow-hidden rounded-3xl">
             {/* Soft glow behind device */}
             <div className="absolute inset-0 bg-gradient-radial from-vaera-ice/50 via-transparent to-transparent scale-110 blur-2xl" />
             <Image
-              src="https://cdn.shopify.com/s/files/1/0710/2313/2772/files/Hero_Square.png?v=1754273251"
+              src="https://cdn.shopify.com/s/files/1/0710/2313/2772/files/AI2_20-_20Aesthetic_2025-08-31_02_24_37_557137_png.png?v=1756607115"
               alt="Vaera microneedling device"
               fill
-              className="object-contain drop-shadow-2xl"
+              className="object-cover scale-150 drop-shadow-2xl"
+              style={{ transformOrigin: '50% 65%' }}
               priority
             />
           </div>
@@ -120,13 +121,14 @@ export default function Hero() {
       <div className="md:hidden flex flex-col min-h-[100dvh] relative">
         {/* Image section */}
         <div className="relative w-full pt-24 pb-4 px-4">
-          <div ref={imageRef} className="relative aspect-square max-w-sm mx-auto">
+          <div ref={imageRef} className="relative aspect-square max-w-sm mx-auto overflow-hidden rounded-2xl">
             <div className="absolute inset-0 bg-gradient-radial from-vaera-ice/50 via-transparent to-transparent scale-125 blur-2xl" />
             <Image
-              src="https://cdn.shopify.com/s/files/1/0710/2313/2772/files/Hero_Square.png?v=1754273251"
+              src="https://cdn.shopify.com/s/files/1/0710/2313/2772/files/AI2_20-_20Aesthetic_2025-08-31_02_24_37_557137_png.png?v=1756607115"
               alt="Vaera microneedling device"
               fill
-              className="object-contain drop-shadow-xl"
+              className="object-cover scale-150 drop-shadow-xl"
+              style={{ transformOrigin: '50% 65%' }}
               priority
             />
           </div>
@@ -146,7 +148,7 @@ export default function Hero() {
             <br />
             Results.
             <br />
-            <span className="text-vaera-light-navy/70">At Home.</span>
+            <span className="text-vaera-navy">At Home.</span>
           </h1>
 
           <p className="font-poppins font-light text-base text-vaera-navy/60 max-w-md mb-8 leading-relaxed">
@@ -169,11 +171,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="text-vaera-navy/40 text-xs font-poppins font-light tracking-widest uppercase">Scroll</span>
-        <div className="w-px h-12 bg-gradient-to-b from-vaera-navy/30 to-transparent" />
-      </div>
     </section>
   )
 }

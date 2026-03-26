@@ -34,15 +34,17 @@ export default function Philosophy() {
   }, [])
 
   return (
-    <section ref={philosophyRef} className="relative py-32 md:py-48 bg-vaera-navy overflow-hidden">
-      {/* Background Texture */}
-      <div className="absolute inset-0 opacity-10">
+    <section ref={philosophyRef} className="relative py-32 md:py-48 bg-black overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2680&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1470&auto=format&fit=crop"
           alt=""
           fill
           className="object-cover"
         />
+        {/* Black overlay */}
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       <div className="relative section-padding">

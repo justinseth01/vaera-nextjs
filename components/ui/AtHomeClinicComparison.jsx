@@ -4,9 +4,9 @@ import { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { Award, TrendingDown, TrendingUp } from 'lucide-react'
 
-const CLINIC_COST_PER_SESSION = 150
+const CLINIC_COST_PER_SESSION = 300
 const VAERA_COST = 249
-const MAX_SESSIONS = 12
+const MAX_SESSIONS = 8
 
 export default function AtHomeClinicComparison() {
   const [sessions, setSessions] = useState(1)

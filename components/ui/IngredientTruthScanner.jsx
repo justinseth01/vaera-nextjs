@@ -28,45 +28,61 @@ export default function IngredientTruthScanner() {
   const vaeraRef = useRef(null)
 
   useEffect(() => {
+    const timeouts = []
+    let ctx
+
     const runAnimation = () => {
-      const tl = gsap.timeline({
-        onComplete: () => {
-          setTimeout(() => {
-            setPhase('idle')
-            gsap.set([competitorRef.current, vaeraRef.current, scanLineRef.current], { clearProps: 'all' })
-            setTimeout(runAnimation, 1000)
-          }, 3000)
-        }
+      if (!competitorRef.current || !vaeraRef.current || !scanLineRef.current) return
+
+      ctx = gsap.context(() => {
+        const tl = gsap.timeline({
+          onComplete: () => {
+            const t1 = setTimeout(() => {
+              setPhase('idle')
+              if (competitorRef.current && vaeraRef.current && scanLineRef.current) {
+                gsap.set([competitorRef.current, vaeraRef.current, scanLineRef.current], { clearProps: 'all' })
+              }
+              const t2 = setTimeout(runAnimation, 1000)
+              timeouts.push(t2)
+            }, 3000)
+            timeouts.push(t1)
+          }
+        })
+
+        // Phase 1: Show competitor label
+        setPhase('scanning')
+        tl.fromTo(competitorRef.current,
+          { y: -20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }
+        )
+
+        // Phase 2: Scan line sweeps
+        .fromTo(scanLineRef.current,
+          { top: 0, opacity: 1 },
+          { top: '100%', duration: 1.5, ease: 'power1.inOut' }
+        )
+
+        // Phase 3: Show flagged state
+        .call(() => setPhase('flagged'))
+        .to({}, { duration: 2 })
+
+        // Phase 4: Transition to Vaera
+        .to(competitorRef.current, { y: 20, opacity: 0, duration: 0.4, ease: 'power2.in' })
+        .call(() => setPhase('vaera'))
+        .fromTo(vaeraRef.current,
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }
+        )
       })
-
-      // Phase 1: Show competitor label
-      setPhase('scanning')
-      tl.fromTo(competitorRef.current,
-        { y: -20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }
-      )
-
-      // Phase 2: Scan line sweeps
-      .fromTo(scanLineRef.current,
-        { top: 0, opacity: 1 },
-        { top: '100%', duration: 1.5, ease: 'power1.inOut' }
-      )
-
-      // Phase 3: Show flagged state
-      .call(() => setPhase('flagged'))
-      .to({}, { duration: 2 })
-
-      // Phase 4: Transition to Vaera
-      .to(competitorRef.current, { y: 20, opacity: 0, duration: 0.4, ease: 'power2.in' })
-      .call(() => setPhase('vaera'))
-      .fromTo(vaeraRef.current,
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }
-      )
     }
 
-    const timeout = setTimeout(runAnimation, 1500)
-    return () => clearTimeout(timeout)
+    const initialTimeout = setTimeout(runAnimation, 1500)
+    timeouts.push(initialTimeout)
+
+    return () => {
+      timeouts.forEach(t => clearTimeout(t))
+      if (ctx) ctx.revert()
+    }
   }, [])
 
   return (

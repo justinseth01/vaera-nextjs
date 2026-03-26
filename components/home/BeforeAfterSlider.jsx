@@ -91,9 +91,6 @@ export default function BeforeAfterSlider() {
               className="object-cover"
               draggable="false"
             />
-            <div className="absolute bottom-6 left-6 bg-vaera-navy/90 backdrop-blur-sm px-4 py-2 rounded-full">
-              <span className="font-poppins font-medium text-white text-sm">Vaera</span>
-            </div>
           </div>
 
           {/* Competitor Image (Top Layer with clip) */}
@@ -108,9 +105,6 @@ export default function BeforeAfterSlider() {
               className="object-cover"
               draggable="false"
             />
-            <div className="absolute bottom-6 right-6 bg-red-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
-              <span className="font-poppins font-medium text-white text-sm">Competitor</span>
-            </div>
           </div>
 
           {/* Slider Handle */}

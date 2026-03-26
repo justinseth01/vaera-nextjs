@@ -18,8 +18,8 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
       isScrolled
-        ? 'bg-white/90 backdrop-blur-xl border border-vaera-navy/10 shadow-lg'
-        : 'bg-white/60 backdrop-blur-md border border-vaera-navy/5'
+        ? 'bg-white/90 backdrop-blur-xl border border-vaera-navy/10 shadow-lg opacity-100 translate-y-0'
+        : 'opacity-0 -translate-y-full pointer-events-none'
     } rounded-full px-8 py-4`}>
       <div className="flex items-center gap-12">
         <Link href="/" className="font-italiana text-2xl tracking-wide text-vaera-navy transition-colors duration-300">
