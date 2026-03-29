@@ -44,15 +44,25 @@ npm run lint     # Run ESLint
 
 - `app/` - Next.js App Router pages and layouts
   - `page.jsx` - Homepage (/)
-  - `products/page.jsx` - Products page (/products)
   - `layout.jsx` - Root layout with font imports (Italiana, Poppins, Roboto Mono)
   - `globals.css` - Tailwind layers + custom component classes + noise overlay
+  - `blog/` - Blog routes (`/blog`, `/blog/[slug]`, `/blog/category/[cat]`)
+  - `products/microneedling-pen/` - Product page
+  - `pages/` - Static pages (about-us, contact, faq, data-sharing-opt-out)
+  - `collections/all/` - All products collection
+  - `cart/` - Cart page
+  - `dev/sections/` - Dev-only section management tool
 - `components/` - Organized by feature area:
-  - `home/` - Homepage sections (Hero, Features, Philosophy, Protocol, Waitlist, BeforeAfterSlider, WhyUs)
-  - `shop/` - Product page sections (ProductGallery, ProductInfo, Benefits, WhyBetter)
-  - `layout/` - Shared layout (Navbar, ShopNavbar, Footer, ShopFooter, NoiseOverlay)
+  - `sections/` - All reusable page sections (Hero, Features, Philosophy, ProductGallery, etc.)
+  - `blog/` - Blog components (PostCard, MDXComponents, ClinicalCallout, CategoryFilter, CompactWaitlist)
+  - `layout/` - Shared layout (Navbar, Footer, NoiseOverlay)
   - `ui/` - Reusable animation components (HelixAnimation, TelemetryTypewriter, etc.)
-- `lib/shopify.js` - Shopify Storefront API client (stubbed, awaiting credentials)
+- `content/blog/` - MDX blog posts with frontmatter
+- `lib/`
+  - `shopify.js` - Shopify Storefront API client
+  - `blog.js` - Blog helper functions (getAllPosts, getPostBySlug, etc.)
+  - `sections.js` - Global section registry
+  - `pages/` - Page-specific section configs (home.js, products.js)
 
 ### Design System
 
@@ -114,6 +124,47 @@ To enable:
 
 Remote images allowed from `images.unsplash.com` and `cdn.shopify.com` (configured in `next.config.mjs`). All images via `next/image` with explicit dimensions or `fill` + `object-cover`.
 
+### Blog System
+
+MDX-based blog with server-side rendering for SEO. Dependencies: `next-mdx-remote`, `gray-matter`.
+
+**Content Location:** `content/blog/*.mdx`
+
+**Frontmatter Schema:**
+```yaml
+title: string
+slug: string
+excerpt: string
+category: string (science-technology | guides | results-recovery | skin-concerns | vaera)
+coverImage: string (Unsplash URL or Shopify CDN)
+publishDate: string (YYYY-MM-DD)
+readingTime: string
+featured: boolean
+```
+
+**Routes:**
+- `/blog` - Blog index with category filters
+- `/blog/[slug]` - Individual post page
+- `/blog/category/[cat]` - Category filtered view
+
+**Custom MDX Components:**
+- `<ClinicalCallout>` - Highlighted callout boxes for key insights
+- Standard elements (h2, h3, p, ul, blockquote) styled to match design system
+
+**Adding New Posts:** Create `content/blog/your-post.mdx` with frontmatter, write content, run build. No code changes required.
+
+### Section Management System
+
+Reusable section components with a global registry for use across multiple pages.
+
+**Registry:** `lib/sections.js` - Maps section names to components with `usableOn` field specifying which pages can use each section.
+
+**Page Configs:** `lib/pages/*.js` - Define which sections appear on each page and their order.
+
+**Dev Tool:** `/dev/sections` - Visual interface to preview all sections (dev only, not for production).
+
+**Usage:** Sections are server-rendered. To add a section to a page, update the page's config in `lib/pages/`.
+
 ## Copy & Messaging Rules
 
 - Never use the word "luxury" — Vaera is premium and precise, not luxurious
@@ -134,6 +185,10 @@ Remote images allowed from `images.unsplash.com` and `cdn.shopify.com` (configur
 
 - Homepage and products page are functional with placeholder Unsplash images
 - Waitlist forms have frontend validation only (no backend integration)
+- Blog system functional with MDX posts in `content/blog/`
+- URL structure matches Shopify site for SEO continuity
+- Section management system in place for reusable components
+- Shopify checkout flow ready but requires API credentials
 
 ## Design Quality Standard
 
@@ -142,7 +197,7 @@ This is not a template site. Every component must feel intentional.
 - Spacing and typography create hierarchy, not just structure  
 - The site should feel like it was designed by a senior creative 
   technologist, not assembled from components
-- When in doubt: more restraint, more whitespace, more precision- Shopify checkout flow is ready but requires API credentials
+- When in doubt: more restraint, more whitespace, more precision
 
 ## Fixed Design System (NEVER CHANGE)
 

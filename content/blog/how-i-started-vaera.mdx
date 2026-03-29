@@ -1,0 +1,106 @@
+---
+title: "How I Started Vaera: A Founder's Story"
+slug: "how-i-started-vaera"
+excerpt: "I was a 22-year-old engineering student trying to fix my hair. I ended up building a company. This is the story of how frustration with bad devices turned into Vaera."
+category: "vaera"
+coverImage: "https://cdn.shopify.com/s/files/1/0710/2313/2772/files/MG_0714-33.jpg?v=1774555832"
+publishDate: "2026-03-28"
+author: "Justin Seth"
+featured: true
+---
+
+![Me at 22, checking my hairline](https://cdn.shopify.com/s/files/1/0710/2313/2772/files/IMG_3481_2.jpg?v=1774752706)
+
+I'm 22 years old, standing in my bathroom, running my fingers through my hair after a shower. I've been doing this a lot lately, tilting my head under the light, pulling the hair back, checking if it's thinner than last week. It is. It's definitely thinner. And I get this sinking feeling that every guy who's dealt with this knows. It's the slow realization that it's not going to stop on its own.
+
+That's not the kind of thing you talk about at 22. Your friends aren't dealing with it. You don't bring it up. You just quietly start Googling at midnight, falling down rabbit holes of Reddit threads, before-and-after photos, and product reviews from people who sound just as desperate as you feel.
+
+I started with minoxidil and finasteride, the usual options. They helped! My hair stopped getting worse, and I even saw some thickening. But the progress only lasted so long, eventually losing the thickness I had gained back. I was starting to accept that maybe I'd never be back to the way my hair was originally.
+
+That wasn't until I found microneedling.
+
+## The Engineering Problem
+
+The concept made sense to me as an engineer. You create controlled micro-injuries in the scalp, your body sends growth factors and blood flow to repair the area, and that response helps revive weakening hair follicles. The clinical evidence was strong, and people in online communities were getting results. I got excited for the first time in months.
+
+So I bought a device.
+
+But the experience was nothing like what I expected. The first device I tried was a derma roller. It got tangled in my hair, hurt more than it should have, and I couldn't tell if I was doing it right or just shredding my scalp. I tried a motorized pen next, thinking that would solve it. It was better, but still inconsistent. Sometimes the needles felt overly aggressive. The depth felt uneven. Every session felt like a gamble between "is this working?" and "am I making this worse?"
+
+I kept using them anyway, because what else was I going to do? So I started researching obsessively. Not just how to microneedle, but *why* these devices felt so wrong. I was a mechanical engineering student at Pitt. I knew what precise actuation was supposed to look like, and this wasn't it.
+
+## What I Found When I Looked Deeper
+
+The more I researched, the more I realized the problem wasn't user error. It was engineering.
+
+<ClinicalCallout>
+These devices were using cheap motors that couldn't move the needles fast enough. When a needle enters your skin slowly, it doesn't puncture cleanly. It drags, it tears, it causes unnecessary pain and trauma.
+</ClinicalCallout>
+
+The spacing between needle strikes was too close together, which meant the skin was getting macerated instead of cleanly punctured. And the depth? Wildly inconsistent. You'd set it to 0.5mm and get anywhere from 0.3 to 0.7 depending on how you held it or how much pressure you applied.
+
+No one was talking about this. Every brand was selling basically the same motor in a different plastic shell, slapping their logo on it, and calling it "professional grade." The whole industry felt like it was built on marketing instead of engineering.
+
+**But** I wasn't thinking about starting a company. Not even close. I was a college student trying to fix my hair. The idea of building a product, starting a business, raising money. None of that was on my radar. I just wanted something that worked.
+
+## The Moment Everything Changed
+
+I remember the moment the idea shifted from frustration to curiosity. I was sitting at my desk, and I had taken apart one of the motorized pens I'd been using. The guts of it were spread out in front of me: the motor, the mechanism, the needle cartridge. And I just thought, *this is the best they could do?*
+
+The engineering was crude. The motor wasn't designed for this application. The whole approach felt like someone grabbed an off-the-shelf motor, shoved it into a metal housing, and called it done. No one actually sat down and thought about what the needles *need* to do: how fast they need to move, how consistent the depth needs to be, and how the motion itself affects whether you get a clean puncture or a painful drag across the skin.
+
+I started sketching ideas in my notebook that night. Not because I had a business plan, but because the engineering problem was genuinely interesting to me.
+
+## The First Prototype
+
+So I started prototyping. My first build was ridiculous. It was an Arduino wired up to a random motor from DigiKey, held together with whatever I could find. It looked like something that belonged in a junk drawer, not on someone's skin. But when I turned it on and measured the actuation, I stopped.
+
+It was faster. It was cleaner. The needle was firing in and out so quickly that it wasn't dragging at all. It was actually puncturing cleanly, the way it was supposed to. Even on this clunky prototype with wires hanging off of it, the performance was better than devices people were paying $200+ for.
+
+![Early Arduino prototype](https://cdn.shopify.com/s/files/1/0710/2313/2772/files/Screenshot_2026-03-28_at_10.57.05_PM.png?v=1774753034)
+
+That was the moment. Not "I'm going to start a company." More like, "wait… this actually works. This is actually better." Standing in my room, looking at this rickety thing on my desk, watching the needle move in a way I'd never seen from any consumer device. Something clicked. If I could get this kind of performance from a cheap prototype, what would happen if I actually engineered it properly?
+
+## The Hard Part Nobody Talks About
+
+![Soldering late at night](https://cdn.shopify.com/s/files/1/0710/2313/2772/files/lp_image.jpg?v=1774753164)
+
+But knowing something *can* be built and actually building it are two completely different things.
+
+I graduated from Pitt and moved back in with my parents. Not exactly the triumphant post-college narrative. I enrolled in a part-time master's program at Boston University for software development, partly because I wanted to learn it, mostly because the flexible schedule meant I could pour real time into this idea while still having a backup plan.
+
+I had no funding. Every prototype component, every test, every iteration came out of my own pocket. I didn't have a co-founder. I didn't have a team. I didn't even have a company name for a while. It was just me, in my childhood bedroom in Pittsburgh, trying to turn an engineering insight into something real.
+
+The loneliness of it is something people don't talk about enough. When you're a solo founder at the idea stage, there's no one to bounce decisions off of. No one to tell you whether you're onto something or delusional. You're sitting at your parents' kitchen table, reading about patent law at 11 pm, and everyone you went to school with is out living normal post-grad lives. You start to wonder if you're wasting the years when you should be building a career. Your friends are getting jobs at real companies with real paychecks. You're soldering wires to a motor, hoping it works this time.
+
+At times, I didn't feel like I was just building a product. I was betting on myself in a way that felt reckless. Every month that went by without clear progress felt like evidence that maybe I should just get an engineering job and move on.
+
+But I kept going. Partly because the engineering results kept validating the idea. Every time I tested my prototype against the market's, the difference was significant. Although my life was uncertain, I knew I had real results to help keep me grounded.
+
+## When It Became Real
+
+![Waiting to pitch to AlphaLab](https://cdn.shopify.com/s/files/1/0710/2313/2772/files/IMG_0281.jpg?v=1774753342)
+
+The moment things actually changed was getting accepted into AlphaLab Gear, Pittsburgh's hardware accelerator. That was when it went from "I think this could work" to "this is going to work."
+
+Getting in meant funding. Real funding, not just my savings account. It meant mentorship from people who had actually built and scaled hardware companies. It meant I wasn't alone anymore. I had a support structure, a network, and external validation from people who evaluate startups for a living. They looked at what I was building and said, "This is worth investing in."
+
+I don't think I fully appreciated what that meant until it happened. For over a year, the only person who believed this was going somewhere was me. Hearing it from someone else, someone with no reason to be nice about it, changed something. It made the thing feel real in a way it hadn't before.
+
+## Where We Are Now
+
+That was the beginning of Vaera becoming an actual company instead of a project in my parents' house. We've raised funding. We have a team now: Isabella handling medical research, Nick from CMU building out the embedded systems, and Dr. Clark from Diamond Kinetics advising us. We're working with industrial designers to get the device manufacturing-ready. Things are moving.
+
+![Robotics Factory cohort at AlphaLab](https://cdn.shopify.com/s/files/1/0710/2313/2772/files/Gear_Group_AlphaLab_AL26_Robotics_Factory_Social_1.png?v=1774753425)
+
+But I'd be lying if I said the uncertainty is gone. It's not. Building a hardware startup is hard in ways I didn't anticipate, and there are still days when the gap between where we are and where we need to be feels enormous.
+
+What *has* changed is why I keep going. It started with my hair. I just wanted something that worked. But somewhere between tearing apart that derma pen and watching my first prototype outperform devices that had been on the market for years, the problem got bigger than me.
+
+There are millions of people microneedling at home right now with devices that aren't engineered well enough to be safe or effective, and most of them have no way of knowing that. The information online is a mess. The products are mediocre. And no one is being honest with them about it.
+
+That's what Vaera is for. Not because I woke up one day and decided to be an entrepreneur, but because I was a frustrated customer who happened to be an engineer. I built the thing I wished existed when I was 22, staring at the mirror, just trying to figure out what to do about my hair.
+
+I'm still figuring a lot of this out. But I know the product works. And I know the people who need it deserve better than what's out there right now.
+
+That's enough to keep going.

@@ -4,9 +4,10 @@ import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
-import { Microscope, Eye, Award } from 'lucide-react'
+import { Microscope, Eye, Award, ArrowRight } from 'lucide-react'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -172,6 +173,14 @@ export default function AboutPage() {
                     — Justin Seth, Founder
                   </p>
                 </div>
+
+                <Link
+                  href="/blog/how-i-started-vaera"
+                  className="story-content inline-flex items-center gap-2 mt-8 font-poppins text-vaera-navy hover:text-vaera-light-navy transition-colors group"
+                >
+                  <span className="underline underline-offset-4">Read the full story</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
             </div>
           </div>

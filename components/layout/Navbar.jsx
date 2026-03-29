@@ -51,25 +51,31 @@ export default function Navbar() {
           {/* Desktop nav links */}
           <div className="hidden md:flex items-center gap-8">
             <Link
-              href="/products"
+              href="/products/microneedling-pen"
               className="text-sm font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy transition-all duration-300 magnetic-hover"
             >
               Shop
             </Link>
             <Link
-              href="/about"
+              href="/pages/about-us"
               className="text-sm font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy transition-all duration-300 magnetic-hover whitespace-nowrap"
             >
               About Us
             </Link>
             <Link
-              href="/faq"
+              href="/pages/faq"
               className="text-sm font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy transition-all duration-300 magnetic-hover"
             >
               FAQ
             </Link>
             <Link
-              href="/contact"
+              href="/blog"
+              className="text-sm font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy transition-all duration-300 magnetic-hover"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/pages/contact"
               className="text-sm font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy transition-all duration-300 magnetic-hover"
             >
               Contact
@@ -124,28 +130,35 @@ export default function Navbar() {
           {/* Sidebar links */}
           <div className="flex flex-col p-6 gap-2">
             <Link
-              href="/products"
+              href="/products/microneedling-pen"
               onClick={closeMobileMenu}
               className="text-lg font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy hover:bg-vaera-gray py-3 px-4 rounded-xl transition-all duration-300"
             >
               Shop
             </Link>
             <Link
-              href="/about"
+              href="/pages/about-us"
               onClick={closeMobileMenu}
               className="text-lg font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy hover:bg-vaera-gray py-3 px-4 rounded-xl transition-all duration-300"
             >
               About Us
             </Link>
             <Link
-              href="/faq"
+              href="/pages/faq"
               onClick={closeMobileMenu}
               className="text-lg font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy hover:bg-vaera-gray py-3 px-4 rounded-xl transition-all duration-300"
             >
               FAQ
             </Link>
             <Link
-              href="/contact"
+              href="/blog"
+              onClick={closeMobileMenu}
+              className="text-lg font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy hover:bg-vaera-gray py-3 px-4 rounded-xl transition-all duration-300"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/pages/contact"
               onClick={closeMobileMenu}
               className="text-lg font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy hover:bg-vaera-gray py-3 px-4 rounded-xl transition-all duration-300"
             >

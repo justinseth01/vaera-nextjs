@@ -261,7 +261,7 @@ export default function FAQPage() {
                 Our team is here to help. Reach out anytime and we will get back to you within 24 hours.
               </p>
               <a
-                href="/contact"
+                href="/pages/contact"
                 className="btn-primary inline-flex items-center gap-2"
               >
                 Contact Us

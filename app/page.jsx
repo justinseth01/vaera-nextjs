@@ -1,33 +1,26 @@
 import Navbar from '@/components/layout/Navbar'
-import Hero from '@/components/home/Hero'
-// import Features from '@/components/home/Features'
-import TreatmentComparison from '@/components/home/TreatmentComparison'
-import MotorComparison from '@/components/home/MotorComparison'
-import TreatsConcerns from '@/components/home/TreatsConcerns'
-import SkinSense from '@/components/home/SkinSense'
-import Protocol from '@/components/home/Protocol'
-import Waitlist from '@/components/home/Waitlist'
-import BeforeAfterSlider from '@/components/home/BeforeAfterSlider'
-import Testimonials from '@/components/home/Testimonials'
-import WhyUs from '@/components/home/WhyUs'
 import Footer from '@/components/layout/Footer'
+import { SECTIONS, SECTION_COMPONENTS } from '@/lib/sections'
+import { HOME_SECTIONS } from '@/lib/pages/home'
 
 export default function HomePage() {
+  // Get active sections in order, merged with global registry data
+  const activeSections = HOME_SECTIONS
+    .filter(s => s.active)
+    .map(pageSection => {
+      const globalSection = SECTIONS.find(g => g.id === pageSection.id)
+      return { ...globalSection, ...pageSection }
+    })
+    .filter(Boolean)
+
   return (
     <>
       <Navbar />
       <main>
-        <Hero />
-        <BeforeAfterSlider />
-        <Testimonials />
-        <MotorComparison />
-        <TreatsConcerns />
-        <TreatmentComparison />
-        <Waitlist />
-        <SkinSense />
-        {/* <Features /> */}
-        <Protocol />
-        <WhyUs />
+        {activeSections.map(section => {
+          const Component = SECTION_COMPONENTS[section.component]
+          return <Component key={section.id} />
+        })}
       </main>
       <Footer />
     </>
