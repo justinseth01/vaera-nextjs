@@ -58,7 +58,7 @@ export default function Hero() {
 
             {/* Subhead */}
             <p className="font-poppins text-lg md:text-xl text-vaera-navy/60 leading-relaxed mb-10 max-w-lg">
-              The microneedling device built for results, not hype. 3x more consistent penetration depth than leading at-home devices.
+              The world's first microneedling device designed to be safe for at-home use.
             </p>
 
             {/* CTA */}
@@ -79,18 +79,18 @@ export default function Hero() {
             <div className="flex flex-wrap gap-8 lg:gap-12">
               <div>
                 <div className="font-mono text-2xl md:text-3xl text-vaera-navy font-medium">
-                  ±0.05mm
+                  &lt;3 hrs
                 </div>
                 <div className="font-poppins text-sm text-vaera-navy/50 mt-1">
-                  Penetration variance
+                  Average redness
                 </div>
               </div>
               <div>
                 <div className="font-mono text-2xl md:text-3xl text-vaera-navy font-medium">
-                  40%
+                  2x
                 </div>
                 <div className="font-poppins text-sm text-vaera-navy/50 mt-1">
-                  Less skin trauma
+                  Faster results
                 </div>
               </div>
               <div>
@@ -98,7 +98,7 @@ export default function Hero() {
                   200+
                 </div>
                 <div className="font-poppins text-sm text-vaera-navy/50 mt-1">
-                  Customer interviews
+                  Beta testers
                 </div>
               </div>
             </div>

@@ -1,11 +1,9 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import DensityHeatmapAnimation from '@/components/ui/DensityHeatmapAnimation'
-import VerticalImpactAnimation from '@/components/ui/VerticalImpactAnimation'
-import HeartPulseAnimation from '@/components/ui/HeartPulseAnimation'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -16,21 +14,21 @@ export default function Protocol() {
   const steps = [
     {
       number: '01',
-      title: 'Surface Scan',
-      description: 'Our device analyzes skin density to calibrate needle penetration automatically.',
-      visual: 'density',
+      title: 'Prepare Your Skin',
+      description: 'Cleanse your skin of any oils, makeup, or dirt before microneedling.',
+      image: 'https://cdn.shopify.com/s/files/1/0710/2313/2772/files/washing_face.jpg?v=1774794433',
     },
     {
       number: '02',
-      title: 'Vertical Impact = Clean Punctures',
-      description: 'Patentable skin-safe technology creates precise channels without lateral tearing.',
-      visual: 'impact',
+      title: 'Needle',
+      description: 'Nearly painless microneedling experience due to our patentable motor technology.',
+      image: 'https://cdn.shopify.com/s/files/1/0710/2313/2772/files/image.jpg?v=1774794689',
     },
     {
       number: '03',
-      title: 'Epidermal Recovery',
-      description: 'Optimized for minimal downtime, boosting skin health while you sleep.',
-      visual: 'recovery',
+      title: 'Recovery',
+      description: 'Let your skin recover and enjoy rejuvenated skin.',
+      image: 'https://cdn.shopify.com/s/files/1/0710/2313/2772/files/morning-after_glow.jpg?v=1774794462',
     },
   ]
 
@@ -86,17 +84,20 @@ export default function Protocol() {
             ref={(el) => (cardsRef.current[i] = el)}
             className="sticky top-24 mx-6 md:mx-12 lg:mx-24"
           >
-            <div className="max-w-7xl mx-auto bg-white rounded-4xl p-8 md:p-12 lg:p-16 shadow-xl border border-vaera-navy/5">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="max-w-7xl mx-auto bg-white rounded-4xl p-8 md:p-10 lg:p-12 shadow-xl border border-vaera-navy/5">
+              <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div>
                   <span className="font-mono text-6xl md:text-7xl lg:text-8xl font-bold text-vaera-navy/20 mb-2 block leading-none">{step.number}</span>
                   <h3 className="font-italiana text-3xl md:text-4xl text-vaera-navy mb-4">{step.title}</h3>
                   <p className="font-poppins font-light text-vaera-navy/70">{step.description}</p>
                 </div>
-                <div className="h-64 md:h-80 bg-vaera-gray rounded-3xl flex items-center justify-center overflow-hidden">
-                  {step.visual === 'density' && <DensityHeatmapAnimation />}
-                  {step.visual === 'impact' && <VerticalImpactAnimation />}
-                  {step.visual === 'recovery' && <HeartPulseAnimation />}
+                <div className="relative h-48 md:h-56 bg-vaera-gray rounded-3xl overflow-hidden">
+                  <Image
+                    src={step.image}
+                    alt={step.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
             </div>
