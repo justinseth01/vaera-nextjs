@@ -34,11 +34,8 @@ export default function ProductInfo() {
 
       {/* Price */}
       <div className="flex items-baseline gap-3">
-        <span className="font-italiana text-3xl text-vaera-navy">$299</span>
-        <span className="font-poppins font-light text-vaera-navy/50 line-through">$449</span>
-        <span className="bg-green-500 text-white text-xs font-poppins font-medium px-3 py-1 rounded-full">
-          Save $150
-        </span>
+        <span className="font-poppins font-semibold text-2xl text-vaera-navy">$249</span>
+        <span className="font-poppins font-light text-vaera-navy/50 line-through">$400</span>
       </div>
 
       {/* Description */}
@@ -52,10 +49,9 @@ export default function ProductInfo() {
       <ul className="space-y-3">
         {[
           'Medical-grade titanium needles',
-          'Adjustable depth: 0.25mm - 2.0mm',
+          'Adjustable depth settings',
           '120 Hz precision motor',
-          'Wireless & rechargeable',
-          'FDA-cleared technology',
+          'USB-C powered',
         ].map((feature) => (
           <li key={feature} className="flex items-center gap-3">
             <div className="w-5 h-5 bg-vaera-ice rounded-full flex items-center justify-center">

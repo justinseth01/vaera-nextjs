@@ -62,6 +62,7 @@ const testimonials = [
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [cardsPerView, setCardsPerView] = useState(1)
+  const [isTouching, setIsTouching] = useState(false)
   const sectionRef = useRef(null)
   const trackRef = useRef(null)
 
@@ -103,6 +104,22 @@ export default function Testimonials() {
   const goPrev = useCallback(() => {
     setCurrentIndex((prev) => Math.max(prev - 1, 0))
   }, [])
+
+  // Lock body scroll during touch interactions
+  useEffect(() => {
+    if (isTouching) {
+      document.body.style.overflow = 'hidden'
+      document.body.style.touchAction = 'none'
+    } else {
+      document.body.style.overflow = ''
+      document.body.style.touchAction = ''
+    }
+
+    return () => {
+      document.body.style.overflow = ''
+      document.body.style.touchAction = ''
+    }
+  }, [isTouching])
 
   // GSAP scroll animation
   useEffect(() => {
@@ -147,14 +164,22 @@ export default function Testimonials() {
   const touchEndX = useRef(0)
 
   const handleTouchStart = (e) => {
+    setIsTouching(true)
     touchStartX.current = e.touches[0].clientX
+    touchEndX.current = e.touches[0].clientX
   }
 
   const handleTouchMove = (e) => {
+    if (!isTouching) return
+
+    // Prevent page scrolling while dragging slider
+    e.preventDefault()
     touchEndX.current = e.touches[0].clientX
   }
 
   const handleTouchEnd = () => {
+    setIsTouching(false)
+
     const diff = touchStartX.current - touchEndX.current
     const threshold = 50
 
