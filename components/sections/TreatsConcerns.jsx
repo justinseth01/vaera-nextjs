@@ -14,7 +14,7 @@ const concerns = [
     title: 'Fine Lines & Wrinkles',
     tagline: 'Reveal skin that looks plumper, smoother, and refreshed.',
     mechanism: 'Microneedling supports the skin\'s natural renewal process, helping to improve the appearance of fine lines while leaving skin looking firmer and more youthful.',
-    timeline: '4–6 weeks',
+    timeline: '1–3 days',
     image: 'https://cdn.shopify.com/s/files/1/0710/2313/2772/files/before_after_wrinkles_6.jpg?v=1774630568',
   },
   {
@@ -27,13 +27,13 @@ const concerns = [
     image: 'https://cdn.shopify.com/s/files/1/0710/2313/2772/files/before_after_hair_loss_1.jpg?v=1774630564',
   },
   {
-    id: 'scarring',
-    label: 'Skin Texture',
-    title: 'Uneven Skin Texture',
-    tagline: 'Help minimize the appearance of textured skin and past blemishes.',
-    mechanism: 'Regular use supports the skin\'s natural renewal process, helping to smooth the appearance of uneven texture and leaving skin looking more refined and even.',
-    timeline: '6–8 weeks',
-    image: 'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=800&q=80',
+    id: 'stretchmarks',
+    label: 'Stretch Marks',
+    title: 'Stretch Marks',
+    tagline: 'Help minimize the appearance of stretch marks for smoother-looking skin.',
+    mechanism: 'Regular use supports the skin\'s natural renewal process, helping to smooth the appearance of stretch marks and leaving skin looking more refined and even.',
+    timeline: '8–12 weeks',
+    image: 'https://cdn.shopify.com/s/files/1/0710/2313/2772/files/stretch_before_after.jpg?v=1774796114',
   },
   {
     id: 'pigmentation',
@@ -46,7 +46,7 @@ const concerns = [
   },
   {
     id: 'texture',
-    label: 'Pores',
+    label: 'Skin Texture',
     title: 'Pores & Skin Smoothness',
     tagline: 'Help minimize the look of pores for smoother-looking skin.',
     mechanism: 'With consistent use, skin appears more refined and smooth. Pores look less visible as overall skin texture improves.',
@@ -57,34 +57,35 @@ const concerns = [
 
 export default function TreatsConcerns() {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [isAnimating, setIsAnimating] = useState(false)
+  const [displayIndex, setDisplayIndex] = useState(0)
   const sectionRef = useRef(null)
-  const contentRef = useRef(null)
+  const imageRefs = useRef([])
+  const textRef = useRef(null)
 
   const activeConcern = concerns[activeIndex]
 
   const handleSelect = (index) => {
-    if (index === activeIndex || isAnimating) return
+    if (index === activeIndex) return
 
-    setIsAnimating(true)
-
-    // Fade out current content
-    gsap.to(contentRef.current, {
+    // Fade out text
+    gsap.to(textRef.current, {
       opacity: 0,
       y: 10,
       duration: 0.2,
       ease: 'power2.in',
       onComplete: () => {
+        setDisplayIndex(index)
         setActiveIndex(index)
-        // Fade in new content
-        gsap.fromTo(contentRef.current,
+
+        // Fade in new text with slight delay
+        gsap.fromTo(textRef.current,
           { opacity: 0, y: -10 },
           {
             opacity: 1,
             y: 0,
             duration: 0.3,
+            delay: 0.1,
             ease: 'power2.out',
-            onComplete: () => setIsAnimating(false)
           }
         )
       }
@@ -145,32 +146,40 @@ export default function TreatsConcerns() {
 
         {/* Content Card */}
         <div className="treats-reveal">
-          <div
-            ref={contentRef}
-            className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-vaera-gray rounded-[2rem] p-6 md:p-10 lg:p-12"
-          >
-            {/* Image */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-vaera-gray rounded-[2rem] p-6 md:p-10 lg:p-12">
+            {/* Image Container with Crossfade */}
             <div className="relative aspect-video rounded-2xl overflow-hidden">
-              <Image
-                src={activeConcern.image}
-                alt={activeConcern.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              {/* Subtle overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-vaera-navy/20 to-transparent" />
+              {/* Render all images, control opacity for crossfade */}
+              {concerns.map((concern, index) => (
+                <div
+                  key={concern.id}
+                  ref={(el) => (imageRefs.current[index] = el)}
+                  className="absolute inset-0 transition-opacity duration-500 ease-in-out"
+                  style={{ opacity: index === displayIndex ? 1 : 0 }}
+                >
+                  <Image
+                    src={concern.image}
+                    alt={concern.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  {/* Subtle overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-vaera-navy/20 to-transparent" />
+                </div>
+              ))}
+
               {/* Before/After labels */}
-              <div className="absolute bottom-3 left-3 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full">
+              <div className="absolute bottom-3 left-3 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full z-10">
                 <span className="font-mono text-xs uppercase tracking-wider text-vaera-navy/70">Before</span>
               </div>
-              <div className="absolute bottom-3 right-3 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full">
+              <div className="absolute bottom-3 right-3 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full z-10">
                 <span className="font-mono text-xs uppercase tracking-wider text-vaera-navy/70">After</span>
               </div>
             </div>
 
             {/* Content */}
-            <div>
+            <div ref={textRef}>
               <h3 className="font-italiana text-3xl md:text-4xl lg:text-5xl text-vaera-navy mb-4">
                 {activeConcern.title}
               </h3>

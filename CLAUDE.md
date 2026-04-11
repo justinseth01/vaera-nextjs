@@ -33,10 +33,14 @@ npm run lint     # Run ESLint
 
 ## Tech Stack (Locked)
 
-- Next.js 14 App Router only (no Pages Router)
+**IMPORTANT: Do not upgrade these dependencies without explicit user approval.**
+
+- **Next.js 14.2.35** - App Router only (no Pages Router). DO NOT upgrade to Next.js 15+ without testing - breaking changes with MDX.
+- **React 18** - Locked to v18 for Next.js 14 compatibility
 - Plain JavaScript only (no TypeScript)
 - GSAP for animations (no Framer Motion, no additional UI libraries)
 - Tailwind CSS for styling
+- `next-mdx-remote@^6.0.0` for blog MDX rendering
 
 ## Architecture
 
