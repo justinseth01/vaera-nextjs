@@ -14,16 +14,16 @@ const concerns = [
     title: 'Fine Lines & Wrinkles',
     tagline: 'Reveal skin that looks plumper, smoother, and refreshed.',
     mechanism: 'Microneedling supports the skin\'s natural renewal process, helping to improve the appearance of fine lines while leaving skin looking firmer and more youthful.',
-    timeline: '1–3 days',
+    timeline: 'Results as soon as 1–3 days',
     image: 'https://cdn.shopify.com/s/files/1/0710/2313/2772/files/before_after_wrinkles_6.jpg?v=1774630568',
   },
   {
     id: 'hair',
-    label: 'Scalp Health',
+    label: 'Hair',
     title: 'Scalp Health & Hair Appearance',
     tagline: 'Support a healthier-looking scalp and the appearance of thicker hair.',
     mechanism: 'Microneedling helps enhance the absorption of your favorite scalp serums while supporting overall scalp health. Many users notice hair that looks fuller and more voluminous over time.',
-    timeline: '8–12 weeks',
+    timeline: 'Results as soon as 4 weeks',
     image: 'https://cdn.shopify.com/s/files/1/0710/2313/2772/files/before_after_hair_loss_1.jpg?v=1774630564',
   },
   {
@@ -32,25 +32,25 @@ const concerns = [
     title: 'Stretch Marks',
     tagline: 'Help minimize the appearance of stretch marks for smoother-looking skin.',
     mechanism: 'Regular use supports the skin\'s natural renewal process, helping to smooth the appearance of stretch marks and leaving skin looking more refined and even.',
-    timeline: '8–12 weeks',
+    timeline: 'Results as soon as 4 weeks',
     image: 'https://cdn.shopify.com/s/files/1/0710/2313/2772/files/stretch_before_after.jpg?v=1774796114',
   },
   {
     id: 'pigmentation',
     label: 'Dark Spots',
-    title: 'Uneven Skin Tone',
+    title: 'Dark Spots',
     tagline: 'Reveal a brighter, more even-looking complexion.',
     mechanism: 'Microneedling enhances the absorption of your brightening serums while supporting natural skin renewal. The result is skin that looks more luminous and evenly toned.',
-    timeline: '6–10 weeks',
+    timeline: 'Results as soon as 1–3 days',
     image: 'https://cdn.shopify.com/s/files/1/0710/2313/2772/files/before_after_dark_spots_1.jpg?v=1774630562',
   },
   {
     id: 'texture',
     label: 'Skin Texture',
-    title: 'Pores & Skin Smoothness',
+    title: 'Pores & Skin Texture',
     tagline: 'Help minimize the look of pores for smoother-looking skin.',
     mechanism: 'With consistent use, skin appears more refined and smooth. Pores look less visible as overall skin texture improves.',
-    timeline: '3–5 weeks',
+    timeline: 'Results as soon as 1–3 days',
     image: 'https://cdn.shopify.com/s/files/1/0710/2313/2772/files/before_after_pores_1.jpg?v=1774630573',
   },
 ]
@@ -114,7 +114,7 @@ export default function TreatsConcerns() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="section-padding bg-white overflow-hidden">
+    <section ref={sectionRef} className="px-6 md:px-12 lg:px-24 py-20 md:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">

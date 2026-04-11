@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section className="relative flex items-center overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF8F5] via-white to-[#F5F0EB]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#FDFCFB] via-white to-[#F9F7F5]" />
 
       {/* Subtle grid pattern */}
       <div
@@ -62,7 +62,7 @@ export default function Hero() {
             </p>
 
             {/* CTA */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-16">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <button
                 onClick={scrollToWaitlist}
                 className="group inline-flex items-center gap-3 btn-primary"
@@ -73,34 +73,6 @@ export default function Hero() {
               <span className="font-poppins text-sm text-vaera-navy/40">
                 Launching at $249
               </span>
-            </div>
-
-            {/* Stats */}
-            <div className="flex flex-wrap gap-8 lg:gap-12">
-              <div>
-                <div className="font-mono text-2xl md:text-3xl text-vaera-navy font-medium">
-                  &lt;3 hrs
-                </div>
-                <div className="font-poppins text-sm text-vaera-navy/50 mt-1">
-                  Average redness
-                </div>
-              </div>
-              <div>
-                <div className="font-mono text-2xl md:text-3xl text-vaera-navy font-medium">
-                  2x
-                </div>
-                <div className="font-poppins text-sm text-vaera-navy/50 mt-1">
-                  Faster results
-                </div>
-              </div>
-              <div>
-                <div className="font-mono text-2xl md:text-3xl text-vaera-navy font-medium">
-                  200+
-                </div>
-                <div className="font-poppins text-sm text-vaera-navy/50 mt-1">
-                  Beta testers
-                </div>
-              </div>
             </div>
           </div>
 

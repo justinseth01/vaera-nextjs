@@ -9,19 +9,19 @@ import { Check, X, ChevronRight } from 'lucide-react'
 gsap.registerPlugin(ScrollTrigger)
 
 const vaeraPoints = [
-  'Ultra-fast actuation creates clean, vertical microchannels with zero lateral tearing',
-  'Virtually painless — most users treat without numbing cream',
-  'Minimal redness — typically resolves within 2–4 hours',
-  'Precision depth control eliminates the risk of accidental overtreating',
-  'Consistent ±0.05mm penetration on every single pass',
+  'Less skin redness — typically fades within 2–4 hours',
+  'Faster recovery time means less downtime between treatments',
+  'Precision control helps prevent over-treating sensitive areas',
+  'More comfortable experience — most users don\'t need numbing cream',
+  'Consistent results you can see with regular use',
 ]
 
 const genericPoints = [
-  'Slow, inconsistent motor causes needle drag and micro-tears in skin tissue',
-  'Often painful — most users require numbing cream or skip treatments entirely',
-  'Significant redness and irritation lasting 24–48 hours',
-  'Downtime forces you to plan around treatment days',
-  'Easy to overtreat sensitive areas without knowing',
+  'More noticeable redness lasting 24–48 hours after treatment',
+  'Longer recovery time requires planning around your schedule',
+  'Easy to accidentally over-treat without realizing',
+  'Often uncomfortable — many users require numbing cream',
+  'Inconsistent results can vary between treatments',
 ]
 
 export default function MotorComparison() {
@@ -96,7 +96,7 @@ export default function MotorComparison() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="section-padding bg-white">
+    <section ref={sectionRef} className="px-6 md:px-12 lg:px-24 py-20 md:py-24 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="motor-header text-center mb-16">
@@ -107,7 +107,7 @@ export default function MotorComparison() {
           </h2>
           <p className="font-poppins text-lg md:text-xl text-vaera-navy/70 max-w-3xl mx-auto">
             Most at-home microneedling pens share the same off-the-shelf motor.
-            Vaera was built from scratch — and your skin can feel the difference.
+            Vaera was built from scratch and your skin can feel the difference.
           </p>
         </div>
 
