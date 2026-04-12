@@ -138,11 +138,10 @@ export default function SkinSense() {
             <span className="font-mono text-xs text-vaera-navy uppercase tracking-wider">Powered by SkinSense™</span>
           </div>
           <h2 className="font-italiana text-4xl md:text-5xl lg:text-6xl text-vaera-navy leading-tight mb-6">
-            Adaptive Motor Technology
+            SkinSense™ Motor Technology
           </h2>
           <p className="font-poppins text-lg md:text-xl text-vaera-navy/70 max-w-3xl mx-auto">
-            Forehead skin is 30% thinner than cheek skin. Scar tissue is 3× denser than healthy dermis.
-            A fixed-power device treats them all the same. <span className="text-vaera-navy font-medium">SkinSense doesn't.</span>
+            Not all skin is the same. Our motor continuously monitors tissue resistance and adjusts motor output in real-time.
           </p>
         </div>
 
@@ -232,11 +231,6 @@ export default function SkinSense() {
               </div>
             </div>
           </div>
-
-          {/* Bottom callout */}
-          <p className="text-center font-poppins text-sm text-vaera-navy/50 mt-8 italic">
-            SkinSense™ technology continuously monitors tissue resistance and adjusts motor output in real-time.
-          </p>
         </div>
       </div>
     </section>
