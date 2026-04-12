@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         'vaera-white': '#FFFFFF',
+        // 'vaera-ice': '#d2dbdd',
         'vaera-ice': '#DCEFF6',
         'vaera-gray': '#F7F7F7',
         'vaera-navy': '#1F2A37',

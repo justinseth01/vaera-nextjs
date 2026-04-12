@@ -46,9 +46,9 @@ export default function HeroVerticalSplit() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative h-[100dvh] flex flex-col md:flex-row-reverse">
+    <section ref={sectionRef} className="relative md:h-[100dvh] flex flex-col md:flex-row-reverse">
       {/* PRODUCT PANEL - Right on desktop, first on mobile */}
-      <div className="relative w-full md:w-1/2 h-[50vh] md:h-full overflow-hidden">
+      <div className="relative w-full md:w-1/2 h-[400px] md:h-full overflow-hidden">
         {/* Product image - zoomed in */}
         <div className="hero-vs-product relative w-full h-full">
           <Image
@@ -65,10 +65,10 @@ export default function HeroVerticalSplit() {
       <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px z-10" style={{ backgroundColor: 'rgba(220,239,246,0.2)' }} />
 
       {/* HORIZONTAL DIVIDER - mobile only */}
-      <div className="md:hidden absolute left-0 right-0 top-[50vh] h-px z-10" style={{ backgroundColor: 'rgba(220,239,246,0.2)' }} />
+      <div className="md:hidden absolute left-0 right-0 top-[400px] h-px z-10" style={{ backgroundColor: 'rgba(220,239,246,0.2)' }} />
 
       {/* LIFESTYLE PANEL - Left on desktop, second on mobile */}
-      <div className="relative w-full md:w-1/2 h-[25vh] md:h-full">
+      <div className="relative w-full md:w-1/2 h-[400px] md:h-full">
         {/* Background Image */}
         <Image
           src="https://cdn.shopify.com/s/files/1/0710/2313/2772/files/el-s-gUPznplBsLI-unsplash.jpg?v=1775933668"
@@ -80,7 +80,7 @@ export default function HeroVerticalSplit() {
       </div>
 
       {/* Text content - centered in left panel on desktop, only over right panel on mobile */}
-      <div className="absolute left-0 right-0 md:left-0 md:right-1/2 top-[50vh] h-[25vh] md:top-0 md:bottom-0 md:h-auto flex flex-col items-center justify-center px-6 md:px-12 text-center z-20 pointer-events-none">
+      <div className="absolute left-0 right-0 md:left-0 md:right-1/2 top-[400px] h-[400px] md:top-0 md:bottom-0 md:h-auto flex flex-col items-center justify-center px-6 md:px-12 text-center z-20 pointer-events-none">
         {/* Headline */}
         <h1 className="hero-vs-text font-italiana text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-white leading-tight mb-3">
           Professional skin.
