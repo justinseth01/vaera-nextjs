@@ -9,7 +9,7 @@ module.exports = {
       colors: {
         'vaera-white': '#FFFFFF',
         'vaera-ice': '#DCEFF6',
-        'vaera-gray': '#F5F7F9',
+        'vaera-gray': '#F7F7F7',
         'vaera-navy': '#1F2A37',
         'vaera-light-navy': '#374151',
       },

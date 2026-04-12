@@ -54,22 +54,22 @@ export default function HeroCTA() {
   }
 
   return (
-    <section ref={sectionRef} id="waitlist" className="relative h-[100dvh] flex items-center justify-center overflow-hidden">
+    <section ref={sectionRef} id="waitlist" className="relative h-[75vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="https://cdn.shopify.com/s/files/1/0710/2313/2772/files/el-s-gUPznplBsLI-unsplash.jpg?v=1775933668"
+          src="https://cdn.shopify.com/s/files/1/0710/2313/2772/files/beauty-natural-4-middle.jpg?v=1751045184"
           alt="Vaera background"
           fill
           priority
           className="object-cover object-center"
         />
 
-        {/* Navy tint overlay */}
+        {/* Black overlay */}
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to bottom, rgba(31, 42, 55, 0.35) 0%, rgba(31, 42, 55, 0.50) 100%)'
+            background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.60) 100%)'
           }}
         />
       </div>
