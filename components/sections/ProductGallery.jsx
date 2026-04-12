@@ -16,8 +16,8 @@ export default function ProductGallery() {
 
   const images = [
     {
-      src: 'https://cdn.shopify.com/s/files/1/0710/2313/2772/files/AI2_20-_20Aesthetic_2025-08-31_02_24_37_557137_png.png?v=1756607115',
-      alt: 'Vaera Microneedling Pen - Product View',
+      src: 'https://cdn.shopify.com/s/files/1/0710/2313/2772/files/photoshopped_aesthetic_pic.png?v=1776011408',
+      alt: 'Vaera Microneedling Pen - Hero View',
       priority: true
     },
     {
@@ -153,7 +153,7 @@ export default function ProductGallery() {
             className="object-cover"
             style={{
               opacity: currentImage === index ? 1 : 0,
-              transform: hoverZoom.isHovering ? 'scale(1.8)' : 'scale(1)',
+              transform: hoverZoom.isHovering ? 'scale(1.8)' : (index === 0 ? 'scale(1.15)' : 'scale(1)'),
               transformOrigin: `${hoverZoom.x}% ${hoverZoom.y}%`,
               transition: 'opacity 200ms ease-in-out, transform 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
             }}

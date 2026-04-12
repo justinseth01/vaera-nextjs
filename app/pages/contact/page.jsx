@@ -3,13 +3,13 @@
 import { useState } from 'react'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import HeroCTA from '@/components/sections/HeroCTA'
 import { Mail, MessageSquare, Send } from 'lucide-react'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
     message: '',
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -28,7 +28,7 @@ export default function ContactPage() {
     <>
       <Navbar />
       <main>
-        <section className="min-h-screen pt-32 pb-20 px-6 md:px-12 lg:px-24 bg-white">
+        <section className="pt-32 pb-12 px-6 md:px-12 lg:px-24 bg-white">
           <div className="max-w-4xl mx-auto">
             <span className="text-xs font-mono text-vaera-navy/50 uppercase tracking-widest mb-4 block">
               Get in Touch
@@ -40,30 +40,6 @@ export default function ContactPage() {
               Have a question about Vaera? Want to learn more about our technology?
               We would love to hear from you.
             </p>
-
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="p-6 bg-vaera-gray rounded-2xl">
-                <Mail className="w-6 h-6 text-vaera-ice mb-3" />
-                <h3 className="font-poppins font-medium text-vaera-navy mb-1">Email</h3>
-                <p className="font-poppins font-light text-vaera-navy/70 text-sm">
-                  hello@vaera.com
-                </p>
-              </div>
-              <div className="p-6 bg-vaera-gray rounded-2xl">
-                <MessageSquare className="w-6 h-6 text-vaera-ice mb-3" />
-                <h3 className="font-poppins font-medium text-vaera-navy mb-1">Support</h3>
-                <p className="font-poppins font-light text-vaera-navy/70 text-sm">
-                  support@vaera.com
-                </p>
-              </div>
-              <div className="p-6 bg-vaera-gray rounded-2xl">
-                <Send className="w-6 h-6 text-vaera-ice mb-3" />
-                <h3 className="font-poppins font-medium text-vaera-navy mb-1">Press</h3>
-                <p className="font-poppins font-light text-vaera-navy/70 text-sm">
-                  press@vaera.com
-                </p>
-              </div>
-            </div>
 
             {isSubmitted ? (
               <div className="p-12 bg-vaera-gray rounded-3xl text-center">
@@ -112,21 +88,6 @@ export default function ContactPage() {
 
                 <div>
                   <label className="block font-poppins text-sm text-vaera-navy mb-2">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-xl border border-vaera-navy/10 bg-white font-poppins text-vaera-navy placeholder:text-vaera-navy/40 focus:outline-none focus:border-vaera-ice transition-colors"
-                    placeholder="How can we help?"
-                  />
-                </div>
-
-                <div>
-                  <label className="block font-poppins text-sm text-vaera-navy mb-2">
                     Message
                   </label>
                   <textarea
@@ -154,6 +115,7 @@ export default function ContactPage() {
             )}
           </div>
         </section>
+        <HeroCTA />
       </main>
       <Footer />
     </>
