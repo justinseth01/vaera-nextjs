@@ -70,7 +70,7 @@ export default function BeforeAfterSlider() {
             See the Difference
           </h2>
           <p className="font-poppins font-light text-vaera-navy/70 max-w-2xl mx-auto">
-            Slow, overlapping penetrations from competitors tear the skin — Vaera&apos;s ultra-fast actuation creates clean, precise micro-channels.
+            A banana shows the slow, overlapping penetrations from competitors tear the skin. Vaera&apos;s ultra-fast actuation creates clean, precise micro-channels.
           </p>
         </div>
 

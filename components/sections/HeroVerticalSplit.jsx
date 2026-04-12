@@ -90,7 +90,7 @@ export default function HeroVerticalSplit() {
 
         {/* Subline */}
         <p className="hero-vs-text font-poppins font-light text-white/65 text-lg xl:text-xl 2xl:text-2xl mb-8 max-w-md xl:max-w-lg 2xl:max-w-xl">
-          Engineered for precision. Built for real results.
+          At-home microneedling engineered to be gentle for your skin.
         </p>
 
         {/* CTA Button */}

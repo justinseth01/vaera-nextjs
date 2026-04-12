@@ -15,7 +15,7 @@ export default function HomePage() {
 
   return (
     <>
-      <Navbar />
+      <Navbar isHomepage={true} />
       <main>
         {activeSections.map(section => {
           const Component = SECTION_COMPONENTS[section.component]

@@ -16,21 +16,21 @@ const comparisonData = [
     dermaRoller: { text: 'A few days', positive: false },
   },
   {
-    label: 'Precision',
-    vaera: { text: '±0.05mm needle accuracy', positive: true },
-    clinic: { text: 'Professional precision', positive: true },
-    dermaRoller: { text: 'Inconsistent pressure', positive: false },
+    label: 'Pain',
+    vaera: { text: 'Virtually painless', positive: true },
+    clinic: { text: 'Numbing cream required', positive: true },
+    dermaRoller: { text: 'Painful', positive: false },
   },
   {
     label: 'Skin Safe',
     highlight: true,
-    vaera: { text: 'Minimal downtime & virtually painless', positive: true },
+    vaera: { text: 'Minimal downtime', positive: true },
     clinic: { text: 'Minimal downtime', positive: true },
     dermaRoller: { text: 'Potential side effects', positive: false },
   },
   {
     label: 'Cost',
-    vaera: { text: '$249 one-time purchase', positive: true },
+    vaera: { text: '$249 device', positive: true },
     clinic: { text: '$300+ per treatment', positive: false },
     dermaRoller: { text: '< $20 per roller', positive: true },
   },
@@ -78,7 +78,7 @@ export default function TreatmentComparison() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="font-italiana text-4xl md:text-5xl lg:text-6xl text-vaera-navy leading-tight mb-4">
-            Get professional results from home
+            Get a professional-inspired glow from home
             <br />
             without the clinic visit
           </h2>
@@ -100,13 +100,7 @@ export default function TreatmentComparison() {
                   key={row.label}
                   className="py-5 pr-6 border-t border-vaera-navy/10 flex items-center"
                 >
-                  {row.highlight ? (
-                    <span className="inline-block px-3 py-1 rounded-full bg-vaera-ice text-vaera-navy font-poppins font-medium text-sm">
-                      {row.label}
-                    </span>
-                  ) : (
-                    <span className="font-poppins font-medium text-sm text-vaera-navy/70">{row.label}</span>
-                  )}
+                  <span className="font-poppins font-medium text-sm text-vaera-navy/70">{row.label}</span>
                 </div>
               ))}
             </div>
@@ -140,15 +134,9 @@ export default function TreatmentComparison() {
                       className="py-5 border-t border-vaera-navy/10"
                     >
                       {/* Mobile label */}
-                      {row.highlight ? (
-                        <span className="md:hidden inline-block px-2 py-0.5 rounded-full bg-vaera-ice text-vaera-navy font-poppins font-medium text-xs mb-2">
-                          {row.label}
-                        </span>
-                      ) : (
-                        <span className="md:hidden font-poppins font-medium text-xs text-vaera-navy/50 uppercase tracking-wider mb-2 block">
-                          {row.label}
-                        </span>
-                      )}
+                      <span className="md:hidden font-poppins font-medium text-xs text-vaera-navy/50 uppercase tracking-wider mb-2 block">
+                        {row.label}
+                      </span>
                       <div className="flex items-start gap-3">
                         <StatusIcon positive={row.vaera.positive} />
                         <span className="font-poppins text-sm text-vaera-navy leading-snug">
@@ -192,15 +180,9 @@ export default function TreatmentComparison() {
                       className="py-5 border-t border-vaera-navy/10"
                     >
                       {/* Mobile label */}
-                      {row.highlight ? (
-                        <span className="md:hidden inline-block px-2 py-0.5 rounded-full bg-vaera-ice text-vaera-navy font-poppins font-medium text-xs mb-2">
-                          {row.label}
-                        </span>
-                      ) : (
-                        <span className="md:hidden font-poppins font-medium text-xs text-vaera-navy/50 uppercase tracking-wider mb-2 block">
-                          {row.label}
-                        </span>
-                      )}
+                      <span className="md:hidden font-poppins font-medium text-xs text-vaera-navy/50 uppercase tracking-wider mb-2 block">
+                        {row.label}
+                      </span>
                       <div className="flex items-start gap-3">
                         <StatusIcon positive={row.clinic.positive} />
                         <span className="font-poppins text-sm text-vaera-navy/70 leading-snug">
@@ -244,15 +226,9 @@ export default function TreatmentComparison() {
                       className="py-5 border-t border-vaera-navy/10"
                     >
                       {/* Mobile label */}
-                      {row.highlight ? (
-                        <span className="md:hidden inline-block px-2 py-0.5 rounded-full bg-vaera-ice text-vaera-navy font-poppins font-medium text-xs mb-2">
-                          {row.label}
-                        </span>
-                      ) : (
-                        <span className="md:hidden font-poppins font-medium text-xs text-vaera-navy/50 uppercase tracking-wider mb-2 block">
-                          {row.label}
-                        </span>
-                      )}
+                      <span className="md:hidden font-poppins font-medium text-xs text-vaera-navy/50 uppercase tracking-wider mb-2 block">
+                        {row.label}
+                      </span>
                       <div className="flex items-start gap-3">
                         <StatusIcon positive={row.dermaRoller.positive} />
                         <span className="font-poppins text-sm text-vaera-navy/70 leading-snug">

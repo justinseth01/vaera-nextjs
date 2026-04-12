@@ -69,7 +69,7 @@ export default function HeroCTA() {
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.60) 100%)'
+            background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.75) 100%)'
           }}
         />
       </div>
@@ -85,7 +85,7 @@ export default function HeroCTA() {
 
         {/* Subhead */}
         <p className="hero-cta-reveal font-poppins font-light text-white/65 text-lg max-w-md mx-auto mb-10 leading-relaxed">
-          Professional-grade microneedling engineered for home use. Be first in line when we launch.
+          Not yet available. Reserve your spot to be among the first to experience Vaera when we launch.
         </p>
 
         {/* Email Form or Success State */}

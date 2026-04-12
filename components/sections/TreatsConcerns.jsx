@@ -71,7 +71,7 @@ export default function TreatsConcerns() {
     gsap.to(textRef.current, {
       opacity: 0,
       y: 10,
-      duration: 0.2,
+      duration: 0.15,
       ease: 'power2.in',
       onComplete: () => {
         setDisplayIndex(index)
@@ -83,8 +83,8 @@ export default function TreatsConcerns() {
           {
             opacity: 1,
             y: 0,
-            duration: 0.3,
-            delay: 0.1,
+            duration: 0.2,
+            delay: 0.05,
             ease: 'power2.out',
           }
         )
@@ -95,12 +95,12 @@ export default function TreatsConcerns() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo('.treats-reveal',
-        { y: 40, opacity: 0 },
+        { y: 30, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          stagger: 0.1,
+          duration: 0.5,
+          stagger: 0.06,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -117,14 +117,10 @@ export default function TreatsConcerns() {
     <section ref={sectionRef} className="px-6 md:px-12 lg:px-24 py-20 md:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="treats-reveal font-italiana text-4xl md:text-5xl lg:text-6xl text-vaera-navy mb-6">
+        <div className="text-center mb-10 md:mb-12">
+          <h2 className="treats-reveal font-italiana text-4xl md:text-5xl lg:text-6xl text-vaera-navy">
             How Vaera Can Help
           </h2>
-
-          <p className="treats-reveal font-poppins font-light text-vaera-navy/70 max-w-2xl mx-auto">
-            One device. Five of the most common skin concerns. All supported through consistent, precision microneedling.
-          </p>
         </div>
 
         {/* Concern Selector Pills */}
@@ -154,7 +150,7 @@ export default function TreatsConcerns() {
                 <div
                   key={concern.id}
                   ref={(el) => (imageRefs.current[index] = el)}
-                  className="absolute inset-0 transition-opacity duration-500 ease-in-out"
+                  className="absolute inset-0 transition-opacity duration-300 ease-in-out"
                   style={{ opacity: index === displayIndex ? 1 : 0 }}
                 >
                   <Image

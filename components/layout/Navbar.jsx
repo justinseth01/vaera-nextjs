@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, User, Search, ShoppingBag } from 'lucide-react'
 
-export default function Navbar() {
+export default function Navbar({ isHomepage = false }) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -31,66 +31,91 @@ export default function Navbar() {
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false)
 
+  // Determine styling based on homepage and scroll state
+  const isTransparent = isHomepage && !isScrolled
+  const bgClass = isTransparent ? 'bg-transparent' : 'bg-white/95 backdrop-blur-xl shadow-sm'
+  const textClass = isTransparent ? 'text-white' : 'text-vaera-navy'
+  const textLightClass = isTransparent ? 'text-white/80' : 'text-vaera-navy/70'
+  const borderClass = isTransparent ? 'border-white/10' : 'border-vaera-navy/10'
+
   return (
     <>
-      <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 bg-white/90 backdrop-blur-xl border border-vaera-navy/10 shadow-lg rounded-full px-6 md:px-8 py-4">
-        <div className="flex items-center gap-6 md:gap-12">
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(true)}
-            className="md:hidden flex items-center justify-center w-8 h-8 text-vaera-navy"
-            aria-label="Open menu"
-          >
-            <Menu className="w-5 h-5" />
-          </button>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${bgClass}`}>
+        <div className="max-w-[1920px] mx-auto px-8 md:px-20 py-5">
+          <div className="flex items-center justify-between">
+            {/* Left: Navigation Links (Desktop) */}
+            <div className="hidden md:flex items-center gap-12">
+              <Link
+                href="/products/microneedling-pen"
+                className={`text-base font-poppins font-light ${textLightClass} hover:${textClass} transition-all duration-300 magnetic-hover`}
+              >
+                Shop
+              </Link>
+              <Link
+                href="/pages/about-us"
+                className={`text-base font-poppins font-light ${textLightClass} hover:${textClass} transition-all duration-300 magnetic-hover whitespace-nowrap`}
+              >
+                About Us
+              </Link>
+              <Link
+                href="/pages/faq"
+                className={`text-base font-poppins font-light ${textLightClass} hover:${textClass} transition-all duration-300 magnetic-hover`}
+              >
+                FAQ
+              </Link>
+              <Link
+                href="/blog"
+                className={`text-base font-poppins font-light ${textLightClass} hover:${textClass} transition-all duration-300 magnetic-hover`}
+              >
+                Blog
+              </Link>
+              <Link
+                href="/pages/contact"
+                className={`text-base font-poppins font-light ${textLightClass} hover:${textClass} transition-all duration-300 magnetic-hover`}
+              >
+                Contact
+              </Link>
+            </div>
 
-          <Link href="/" className="font-italiana text-2xl tracking-wide text-vaera-navy transition-colors duration-300">
-            VAERA
-          </Link>
+            {/* Mobile: Hamburger Menu */}
+            <button
+              onClick={() => setIsMobileMenuOpen(true)}
+              className={`md:hidden flex items-center justify-center w-10 h-10 ${textClass}`}
+              aria-label="Open menu"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
 
-          {/* Desktop nav links */}
-          <div className="hidden md:flex items-center gap-8">
+            {/* Center: VAERA Logo */}
             <Link
-              href="/products/microneedling-pen"
-              className="text-sm font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy transition-all duration-300 magnetic-hover"
+              href="/"
+              className={`absolute left-1/2 -translate-x-1/2 font-italiana text-5xl tracking-wide ${textLightClass} hover:${textClass} transition-colors duration-500`}
             >
-              Shop
+              VAERA
             </Link>
-            <Link
-              href="/pages/about-us"
-              className="text-sm font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy transition-all duration-300 magnetic-hover whitespace-nowrap"
-            >
-              About Us
-            </Link>
-            <Link
-              href="/pages/faq"
-              className="text-sm font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy transition-all duration-300 magnetic-hover"
-            >
-              FAQ
-            </Link>
-            <Link
-              href="/blog"
-              className="text-sm font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy transition-all duration-300 magnetic-hover"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/pages/contact"
-              className="text-sm font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy transition-all duration-300 magnetic-hover"
-            >
-              Contact
-            </Link>
+
+            {/* Right: Icons */}
+            <div className="flex items-center gap-8">
+              <button
+                className={`hidden md:block ${textLightClass} hover:${textClass} transition-all duration-300 magnetic-hover`}
+                aria-label="Account"
+              >
+                <User className="w-5 h-5" strokeWidth={1.5} />
+              </button>
+              <button
+                className={`hidden md:block ${textLightClass} hover:${textClass} transition-all duration-300 magnetic-hover`}
+                aria-label="Search"
+              >
+                <Search className="w-5 h-5" strokeWidth={1.5} />
+              </button>
+              <button
+                className={`${textLightClass} hover:${textClass} transition-all duration-300 magnetic-hover`}
+                aria-label="Shopping bag"
+              >
+                <ShoppingBag className="w-5 h-5" strokeWidth={1.5} />
+              </button>
+            </div>
           </div>
-
-          <a
-            href="#waitlist"
-            className="text-sm font-poppins font-medium px-6 py-2 rounded-full bg-vaera-navy text-white hover:bg-vaera-light-navy transition-all duration-300 whitespace-nowrap"
-            style={{ transform: 'scale(1)', transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)' }}
-            onMouseEnter={(e) => e.target.style.transform = 'scale(1.03)'}
-            onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-          >
-            Join Waitlist
-          </a>
         </div>
       </nav>
 
@@ -111,20 +136,36 @@ export default function Navbar() {
         <div className="flex flex-col h-full">
           {/* Sidebar header */}
           <div className="flex items-center justify-between p-6 border-b border-vaera-navy/10">
-            <Link
-              href="/"
-              onClick={closeMobileMenu}
-              className="font-italiana text-2xl tracking-wide text-vaera-navy"
+            <button
+              className="text-vaera-navy/70 hover:text-vaera-navy transition-colors"
+              aria-label="Account"
             >
-              VAERA
-            </Link>
+              <User className="w-6 h-6" strokeWidth={1.5} />
+            </button>
             <button
               onClick={closeMobileMenu}
-              className="w-8 h-8 flex items-center justify-center text-vaera-navy"
+              className="w-8 h-8 flex items-center justify-center text-vaera-navy/70 hover:text-vaera-navy transition-colors"
               aria-label="Close menu"
             >
-              <X className="w-5 h-5" />
+              <X className="w-6 h-6" strokeWidth={1.5} />
             </button>
+          </div>
+
+          {/* Search bar */}
+          <div className="p-6 border-b border-vaera-navy/10">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search..."
+                className="w-full px-4 py-3 pr-10 bg-vaera-gray rounded-xl text-vaera-navy placeholder:text-vaera-navy/40 font-poppins font-light text-sm focus:outline-none focus:ring-2 focus:ring-vaera-navy/20 transition-all"
+              />
+              <button
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-vaera-navy/70 hover:text-vaera-navy transition-colors"
+                aria-label="Search"
+              >
+                <Search className="w-5 h-5" strokeWidth={1.5} />
+              </button>
+            </div>
           </div>
 
           {/* Sidebar links */}
@@ -135,6 +176,13 @@ export default function Navbar() {
               className="text-lg font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy hover:bg-vaera-gray py-3 px-4 rounded-xl transition-all duration-300"
             >
               Shop
+            </Link>
+            <Link
+              href="/pages/contact"
+              onClick={closeMobileMenu}
+              className="text-lg font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy hover:bg-vaera-gray py-3 px-4 rounded-xl transition-all duration-300"
+            >
+              Contact
             </Link>
             <Link
               href="/pages/about-us"
@@ -150,31 +198,6 @@ export default function Navbar() {
             >
               FAQ
             </Link>
-            <Link
-              href="/blog"
-              onClick={closeMobileMenu}
-              className="text-lg font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy hover:bg-vaera-gray py-3 px-4 rounded-xl transition-all duration-300"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/pages/contact"
-              onClick={closeMobileMenu}
-              className="text-lg font-poppins font-light text-vaera-navy/70 hover:text-vaera-navy hover:bg-vaera-gray py-3 px-4 rounded-xl transition-all duration-300"
-            >
-              Contact
-            </Link>
-          </div>
-
-          {/* Sidebar CTA */}
-          <div className="mt-auto p-6 border-t border-vaera-navy/10">
-            <a
-              href="#waitlist"
-              onClick={closeMobileMenu}
-              className="block text-center font-poppins font-medium px-6 py-3 rounded-full bg-vaera-navy text-white hover:bg-vaera-light-navy transition-all duration-300"
-            >
-              Join Waitlist
-            </a>
           </div>
         </div>
       </div>

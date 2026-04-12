@@ -9,10 +9,10 @@ import { Check, X, ChevronRight } from 'lucide-react'
 gsap.registerPlugin(ScrollTrigger)
 
 const vaeraPoints = [
-  'Less skin redness — typically fades within 2–4 hours',
+  'Less skin redness, typically fades within 2–4 hours',
   'Faster recovery time means less downtime between treatments',
   'Precision control helps prevent over-treating sensitive areas',
-  'More comfortable experience — most users don\'t need numbing cream',
+  'More comfortable experience, most users don\'t need numbing cream',
   'Consistent results you can see with regular use',
 ]
 
@@ -20,7 +20,7 @@ const genericPoints = [
   'More noticeable redness lasting 24–48 hours after treatment',
   'Longer recovery time requires planning around your schedule',
   'Easy to accidentally over-treat without realizing',
-  'Often uncomfortable — many users require numbing cream',
+  'Often uncomfortable, many users require numbing cream',
   'Inconsistent results can vary between treatments',
 ]
 
@@ -229,12 +229,6 @@ export default function MotorComparison() {
           </div>
         </div>
 
-        {/* Callout */}
-        <div className="motor-callout mt-12 text-center">
-          <p className="font-poppins text-base md:text-lg text-vaera-navy/80 italic">
-            "Same needle count. Same depth setting. The difference is entirely in the motor."
-          </p>
-        </div>
       </div>
     </section>
   )

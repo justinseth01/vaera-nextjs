@@ -66,9 +66,9 @@ export default function Protocol() {
 
   return (
     <section ref={protocolRef} id="technology" className="bg-vaera-gray">
-      <div className="section-padding">
+      <div className="px-6 md:px-12 lg:px-24 pt-16 md:pt-20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <span className="text-xs font-mono text-vaera-navy/50 uppercase tracking-widest mb-4 block">The Protocol</span>
             <h2 className="font-italiana text-4xl md:text-5xl lg:text-6xl text-vaera-navy">
               How It Works
@@ -77,7 +77,7 @@ export default function Protocol() {
         </div>
       </div>
 
-      <div className="space-y-8 pb-32">
+      <div className="space-y-8 pb-16 md:pb-20">
         {steps.map((step, i) => (
           <div
             key={step.number}
