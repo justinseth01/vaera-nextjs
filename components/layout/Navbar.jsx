@@ -44,7 +44,7 @@ export default function Navbar({ isHomepage = false }) {
         <div className="max-w-[1920px] mx-auto px-8 md:px-20 py-5">
           <div className="flex items-center justify-between">
             {/* Left: Navigation Links (Desktop) */}
-            <div className="hidden md:flex items-center gap-12">
+            <div className="hidden xl:flex items-center gap-12">
               <Link
                 href="/products/microneedling-pen"
                 className={`text-base font-poppins font-light ${textLightClass} hover:${textClass} transition-all duration-300 magnetic-hover`}
@@ -80,7 +80,7 @@ export default function Navbar({ isHomepage = false }) {
             {/* Mobile: Hamburger Menu */}
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className={`md:hidden flex items-center justify-center w-10 h-10 ${textClass}`}
+              className={`xl:hidden flex items-center justify-center w-10 h-10 ${textClass}`}
               aria-label="Open menu"
             >
               <Menu className="w-6 h-6" />
@@ -97,13 +97,13 @@ export default function Navbar({ isHomepage = false }) {
             {/* Right: Icons */}
             <div className="flex items-center gap-8">
               <button
-                className={`hidden md:block ${textLightClass} hover:${textClass} transition-all duration-300 magnetic-hover`}
+                className={`hidden xl:block ${textLightClass} hover:${textClass} transition-all duration-300 magnetic-hover`}
                 aria-label="Account"
               >
                 <User className="w-5 h-5" strokeWidth={1.5} />
               </button>
               <button
-                className={`hidden md:block ${textLightClass} hover:${textClass} transition-all duration-300 magnetic-hover`}
+                className={`hidden xl:block ${textLightClass} hover:${textClass} transition-all duration-300 magnetic-hover`}
                 aria-label="Search"
               >
                 <Search className="w-5 h-5" strokeWidth={1.5} />
@@ -121,7 +121,7 @@ export default function Navbar({ isHomepage = false }) {
 
       {/* Mobile sidebar overlay */}
       <div
-        className={`fixed inset-0 bg-black/50 z-[60] transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 bg-black/50 z-[60] transition-opacity duration-300 xl:hidden ${
           isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         onClick={closeMobileMenu}
@@ -129,7 +129,7 @@ export default function Navbar({ isHomepage = false }) {
 
       {/* Mobile sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-72 bg-white z-[70] transform transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed top-0 left-0 h-full w-72 bg-white z-[70] transform transition-transform duration-300 ease-out xl:hidden ${
           isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
